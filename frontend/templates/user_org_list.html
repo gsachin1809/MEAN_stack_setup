@@ -1,0 +1,13 @@
+<div class='container'>
+    <h3 class='text-center'>Choose Organization</h3>
+    <div class='choose_org_list'>
+      <ul>
+        <li>
+          <input type="text" class='form-control' placeholder="Search"/>
+        </li>
+        <li ng-repeat ="(k,user_org) in user_orgs" ng-click ="current_org(user_org)">
+          <span>{{user_org.org_name}}</span>
+        </li>
+      </ul>
+    </div>
+</div>

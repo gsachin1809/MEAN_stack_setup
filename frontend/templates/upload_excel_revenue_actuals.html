@@ -1,0 +1,240 @@
+<div class="container bootstrap snippet"  ng-init="init()">
+  <h3> <div class="" ng-click="getalluser()">
+
+  </div>
+    <div class="row">
+        <div class="col-lg-8">
+          Actuals Revenue Upload
+        </div>
+        <div class="col-lg-2">
+          <a href="/ajax/revenue_actual/templete" target="_blank">
+            <button type="button" name="button" class="btn btn-success" style="width:100%" >
+                <i class="fa fa-download" aria-hidden="true"></i>
+                <span> Download Template</span>
+            </button>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <button type="button" name="button" class="btn btn-success" style="width:100%" data-toggle="modal" data-target="#revenue_actual" ng-click="init_modal()">
+              <i class="fa fa-upload" aria-hidden="true"></i>
+              <span> Upload</span>
+          </button>
+        </div>
+    </div>
+  </h3>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table-bordered user-list text-center">
+                            <thead style="font-size:15px;color:white;"  class="theam_backgroud_color">
+                                <tr >
+                                <th class="text-center" style="height:33px;"><span>Date of Upload</span></th>
+                                <th class="text-center" style="height:33px;"><span>Status</span></th>
+                                <th class="text-center" style="height:33px;"><span>Message</span></th>
+                                <th class="text-center"style="height:33px;">&nbsp;Action</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size:15px">
+
+                                  <tr ng-hide="record">
+                                    <td colspan="5" >
+                                      No Data found
+                                    </td>
+                                  </tr>
+                                  <tr id='loading' ng-show='is_loading_page'>
+                                    <td class='text-center' colspan="5">
+                                      <i class='fa fa-spin fa-refresh'></i>Loading....
+                                    </td>
+                                  </tr>
+
+                                <tr ng-repeat='status_value in status_data.data'>
+                                    <td>
+                                      {{ status_value.created_at | datedmyTime  }}
+                                    </td>
+                                    <td>
+                                      <span ng-if="status_value.status.id == '3'">
+                                        <i class='fa fa-spin fa-refresh'></i>
+                                      </span>
+                                      {{ status_value.status.status }}
+                                      <span ng-if="status_value.status.id == '3'">
+                                        ...
+                                        <label for="Abort" style="color:red;" ng-click="abort(status_value.id)"> Abort </label>
+                                      </span>
+
+                                    </td>
+                                    <!-- <td>{{ status_value.status.status }} </td> -->
+                                    <td width="40%"  class="text-center">
+                                        {{ status_value.error_msg }}
+                                    </td>
+                                    <td width="20%" style="padding:5px;">
+                                      <a href="{{ status_value.media.url }}" target="_blank">
+
+                                        <button data-dz-remove class="btn btn-info" class="form-control">
+                                          <i class="fa fa-download" aria-hidden="true"></i>
+                                          <span>Download File</span>
+                                        </button>
+                                      </a>
+                                      <!-- <button data-dz-remove class="btn btn-danger delete" class="form-control" ng-click="abort(status_value.id)" >
+                                        <i class="fa fa-stop" aria-hidden="true"></i>
+                                        <span> Abort</span>
+
+
+                                      </button> -->
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <br>
+                        <div class="pull-right" ng-show="view_more">
+                          <button data-dz-remove class="btn btn-warning" class="form-control" ng-click="viewMoreDisplayStatus()" >
+                            <span >View More</span>
+                          </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------Modal for accepting upload file---------------------- -->
+
+<!--                 Modal style sheet                      -->
+<style media="screen">
+.modal-content  {
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+
+.modal-dialog  {
+    width:50%;
+}
+
+</style>
+<!--                 End Modal style sheet                  -->
+
+<div class="modal fade" id="revenue_actual" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header theam_backgroud_color">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="color:white;">Upload Excel For Actual Revenue </h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="container">
+            <div class="form-group row">
+              <div class="col-lg-3">
+                  <label for="year">Financial Year</label>
+                  <select class="form-control" name="repeatSelect" id="repeatSelect" ng-model="upload.finance_year" required>
+                    <option value="">Select</option>
+                      <option ng-repeat="year in finance_year" ng-selected='true' value="{{year.id}}">{{year.start_date | datedmy }} to {{year.end_date | datedmy  }}</option>
+                  </select>
+              </div>
+              <div class="col-lg-2">
+                  <label for="year">Month</label>
+                    <select class="form-control" id="year" ng-model="upload.month" required>
+                      <option value="">Select</option>
+                      <option value="Jan">Jan</option>
+                      <option value="Feb">Feb</option>
+                      <option value="Mar">Mar</option>
+                      <option value="Apr">Apr</option>
+                      <option value="May">May</option>
+                      <option value="Jun">Jun</option>
+                      <option value="Jul">Jul</option>
+                      <option value="Aug">Aug</option>
+                      <option value="Sep">Sep</option>
+                      <option value="Oct">Oct</option>
+                      <option value="Nov">Nov</option>
+                      <option value="Dec">Dec</option>
+
+                    </select>
+              </div>
+              <div class="col-lg-2">
+                  <label for="File">Excel File</label><br>
+                  <input id="upload" type="file" class="form-control"  ng-model="upload.file" onchange="angular.element(this).scope().fileSelected(this)" style="display: none;">
+                  <button type="button" ng-click="openfileselect()" class="btn btn-primary start" class="form-control" id="selectFileButton"><i class="fa fa-file"></i> <span> Select File</span></button>
+                  <div ng-show="filename">
+                    <span>{{ filename }}</span><label class="text-danger" ng-click="cancel()"> <span> &nbsp;<i class="fa fa-times" aria-hidden="true"></i> <span> </label>
+                  </div>
+              </div>
+            </div>
+            <!-- <div class="form-group row">
+              <div class="col-lg-10">
+                  <input id="upload" type="file" class="form-control"  class=""  ng-model="upload.file" onchange="angular.element(this).scope().fileSelected(this)" style="display: none;">
+                  <button type="button" ng-click="openfileselect()" class="btn btn-primary start" class="form-control"><i class="fa fa-file"></i> <span> Select File</span></button>
+                  <span>{{ filename }}</span>
+              </div>
+            </div> -->
+            <div class="col-lg-10">
+                <p class="text-danger">*Please upload only  <strong>excel files</strong>.</p>
+            </div>
+            <div class="col-lg-10"></div>
+            <div class="col-lg-10"></div>
+
+
+          </div>
+
+        </div>
+        <div class="modal-footer">
+            <span ng-hide="is_loading">
+              <button class="btn btn-primary start" class="form-control" ng-click="uploadExcel()">
+                <i class="fa fa-upload"></i>
+                <span>Upload File</span>
+              </button>
+            </span>
+
+            <span ng-show="is_loading">
+              <i class='fa fa-spin fa-refresh'></i>Loading....
+            </span>
+
+            <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- modal for the error message  -->
+<div id="error_msg_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Error</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{ error_msg }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of modal for the error message  -->
+<script>
+  function validateForExcel(){
+    var file_name = document.getElementById('excel_file').value;
+    var regex = new RegExp("(.*?)\.(xls|xlsx)$");
+    if(!(regex.test(file_name))) {
+      alert('Only Excel file need to upload');
+      document.getElementById('excel_file').value = '';
+      return false;
+    }
+  }
+
+  function cancel() {
+    console.log("cancel called");
+    document.getElementById('excel_file').value = '';
+  }
+
+  function submit() {
+
+  }
+</script>

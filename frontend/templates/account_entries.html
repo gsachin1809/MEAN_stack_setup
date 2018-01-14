@@ -1,0 +1,62 @@
+<div class="row">
+    <!-- content -->
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-header">
+                    <h1>AccountEntry</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 text-right">
+            <div class="form-group" ng-show="!is_add">
+                <button class='btn btn-primary' ng-click='$state.go("app.account_entry_add")'>Add/Upload</button>
+              </div>
+          </div>
+
+          <div class="col-lg-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th style='width:5%'>Sl.</th>
+                  <th>Date</th>
+                  <th>Account</th>
+                  <th>Debit</th>
+                  <th>Credit</th>
+                  <th>Description</th>
+                  <th style='width:15%'>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="(k,account_entry) in account_entries">
+                  <td>
+                    {{k+1}}
+                  </td>
+                  <td>
+                    No Data
+                  </td>
+                  <td>
+                    No Data
+                  </td>
+                  <td>
+                    No Data
+                  </td>
+                  <td>
+                    No Data
+                  </td>
+                  <td>
+                    No Data
+                  </td>
+                  <td style="text-align:center;">
+                    <button class='btn btn-primary'>Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+</div>

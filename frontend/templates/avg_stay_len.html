@@ -1,0 +1,400 @@
+<div class="panel panel-default">
+      <div class="panel-heading">
+          <!-- <div class="text-muted bootstrap-admin-box-title">ALOS by hospital/department</div> -->
+      </div>
+      <div class="bootstrap-admin-panel-content">
+        <div class='filetr_cat' style="font-size: 85%">
+            <div class='row'>
+             <div class="col-lg-10">
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Categorised By</label>
+                  <select class='form-control' ng-model='cate_id' ng-change='categories_by()'>
+                    <option value='Hospital'>Hospital</option>
+                    <option value='Department'>Department</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <div class="col-lg-3 text-right">
+                    <button class='btn btn-default' style="margin:30px auto;" data-toggle='modal' data-target='#addFilters'>Add Filters</button>
+                  </div>
+                </div>
+              </div>
+              <div class='col-lg-4'>
+                <div class='form-group text-center'>
+                  <label style="margin-right: 60px;">Period</label>
+                  <div class="row">
+                  <div class="col-lg-4">
+                  <select class='form-control'>
+                    <!-- <option value="" disabled selected hidden>Select</option> -->
+                    <option value='April,15'>Apr 15</option>
+                    <option value='MAY,15'>May 15</option>
+                    <option value='June,15'>Jun 15</option>
+                    <option value='July,15'>Jul 15</option>
+                    <option value='August,15'>Aug 15</option>
+                    <option value='September,15'>Sep 15</option>
+                    <option value='october,15'>Oct 15</option>
+                    <option value='November,15'>Nov 15</option>
+                    <option value='December,15'>Dec 15</option>
+                    <option value='january,16'>Jan 16</option>
+                    <option value='February,16'>Feb 16</option>
+                    <option value='March,16'>Mar 16</option>
+                    <option value='April,16'>Apr 16</option>
+                    <option value='May,16'>May 16</option>
+                    <option value='June,16'>Jun 16</option>
+                    <option value='July,16'>Jul 16</option>
+                    <option value='August,16'>Aug 16</option>
+                    <option value='September,16'>Sep 16</option>
+                    <option value='Ocyober,16'>Oct 16</option>
+                    <option value='November,16'>Nov 16</option>
+                    <option value='December,16'>Dec 16</option>
+                    <option value='januarynuary,17'>Jan 17</option>
+                    <option value='February,17'>Feb 17</option>
+                    <option value='March,17'>Mar 17</option>
+                  </select>
+                  </div>
+                  <div class="col-lg-2 text-center" >
+                    <label>To</label>
+                  </div>
+                  <div class="col-lg-4" style="margin-right: 40px;">
+                  <select class='form-control'>
+                    <option value="" disabled selected hidden>Mar 17</option>
+                    <option value='April,15'>Apr 15</option>
+                    <option value='MAY,15'>May 15</option>
+                    <option value='June,15'>Jun 15</option>
+                    <option value='July,15'>Jul 15</option>
+                    <option value='August,15'>Aug 15</option>
+                    <option value='September,15'>Sep 15</option>
+                    <option value='october,15'>Oct 15</option>
+                    <option value='November,15'>Nov 15</option>
+                    <option value='December,15'>Dec 15</option>
+                    <option value='january,16'>Jan 16</option>
+                    <option value='February,16'>Feb 16</option>
+                    <option value='March,16'>Mar 16</option>
+                    <option value='April,16'>Apr 16</option>
+                    <option value='May,16'>May 16</option>
+                    <option value='June,16'>Jun 16</option>
+                    <option value='July,16'>Jul 16</option>
+                    <option value='August,16'>Aug 16</option>
+                    <option value='September,16'>Sep 16</option>
+                    <option value='Ocyober,16'>Oct 16</option>
+                    <option value='November,16'>Nov 16</option>
+                    <option value='December,16'>Dec 16</option>
+                    <option value='januarynuary,17'>Jan 17</option>
+                    <option value='February,17'>Feb 17</option>
+                    <option value='March,17'>Mar 17</option>
+                  </select>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class='col-lg-2' style="margin-right: 150px;">
+                <div class='form-group text-center'>
+                  <label>Frequency</label>
+                  <select class='form-control'>
+                    <option value=''>Monthly</option>
+                    <option value=''>Quarterly</option>
+                    <option value=''>Half-yearly</option>
+                    <option value=''>Annually</option>
+                  </select>
+                </div>
+              </div>
+             </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <div class="col-lg-3 text-right">
+                    <button type="button" class="btn btn-primary" style="margin: 30px auto;width: 150px;"><i class="fa fa-download" aria-hidden="true"></i> Download</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class='text-center'>
+          <div class="row">
+         <div class="col-md-8">
+          <canvas id="stayBottom" width="700" height="240" style="margin:0px auto;">
+          </canvas>
+         </div>
+         <div class="col-md-4">
+          <canvas id="stayTop" width="300" height="220" style="margin:0px auto;">
+          </canvas>
+         </div>
+        </div>
+        </div>
+        <scrollable-table columncount=9 tabledata='cate_stay'>
+          <table class="table table-bordered">
+            <thead >
+              <tr style="background-color: #4bc0c0;">
+               <th fixed style="width:10%">Hospital</th>
+               <th fixed>Department</th>
+               <th style="text-align: right;">Apr-15</th>
+               <th style="text-align: right;">May-15</th>
+               <th style="text-align: right;">Jun-15</th>
+               <th style="text-align: right;">Jul-15</th>
+               <th style="text-align: right;">Aug-15</th>
+               <th style="text-align: right;">Sep-15</th>
+               <th style="text-align: right;">Oct-15</th>
+               <th style="text-align: right;">Nov-15</th>
+               <th style="text-align: right;">Dec-15</th>
+               <th style="text-align: right;">Jan-16</th>
+               <th style="text-align: right;">Feb-16</th>
+               <th style="text-align: right;">Mar-16</th>
+               <th style="text-align: right;">Apr-16</th>
+               <th style="text-align: right;">May-16</th>
+               <th style="text-align: right;">Jun-16</th>
+               <th style="text-align: right;">Jul-16</th>
+               <th style="text-align: right;">Aug-16</th>
+               <th style="text-align: right;">Sep-16</th>
+               <th style="text-align: right;">Oct-16</th>
+               <th style="text-align: right;">Nov-16</th>
+               <th style="text-align: right;">Dec-16</th>
+               <th style="color: white; text-align: right;">Jan-17</th>
+
+               <th style="color: white; text-align: right;">Feb-17</th>
+
+               <th style="color: white; text-align: right;">Mar-17</th>
+
+               <th style="text-align: right;">Total</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat='(k,items) in cate_stay'>
+              <tr ng-repeat='values1 in items' index='{{ index}}' ng-click='expand(k)' consolidated ng-show='!values1.is_regular'>
+                <th colspan=2 fixed style="background-color: #F5F5DC;">{{ values1.name }}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Apr_15 | currency:"":1}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.May_15 | currency:"":1}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jun_15 | currency:"":1}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jul_15 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_15 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_15 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_15 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_15 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_15 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Feb_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Apr_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.May_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jun_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jul_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_16 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_17 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;" >{{values1.Feb_17 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_17 | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.avg | currency:"":1}}</th>
+              </tr>
+              <tr ng-repeat='values1 in items' index='{{ index}}' ng-show='values1.is_regular && expanded[k]'>
+                <td fixed>{{values1.Hospital}}</td>
+                <td fixed>{{values1.Department}}</td>
+                <td style="text-align: right;">{{values1.Apr_15}}</td>
+                <td style="text-align: right;">{{values1.May_15}}</td>
+                <td style="text-align: right;">{{values1.Jun_15}}</td>
+                <td style="text-align: right;">{{values1.Jul_15}}</td>
+                <td style="text-align: right;">{{values1.Aug_15}}</td>
+                <td style="text-align: right;" ng-class='values1.Sep_15_exp'>{{values1.Sep_15}}</td>
+                <td style="text-align: right;" ng-class='values1.Oct_15_exp'>{{values1.Oct_15}}</td>
+                <td style="text-align: right;">{{values1.Nov_15}}</td>
+                <td style="text-align: right;" ng-class='values1.Dec_15_exp'>{{values1.Dec_15}}</td>
+                <td style="text-align: right;">{{values1.Jan_16}}</td>
+                <td style="text-align: right;">{{values1.Feb_16}}</td>
+                <td style="text-align: right;" >{{values1.Mar_16}}</td>
+                <td style="text-align: right;">{{values1.Apr_16}}</td>
+                <td style="text-align: right;">{{values1.May_16}}</td>
+                <td style="text-align: right;" ng-class='values1.Jun_16_exp'>{{values1.Jun_16}}</td>
+                <td style="text-align: right;">{{values1.Jul_16}}</td>
+                <td style="text-align: right;">{{values1.Aug_16}}</td>
+                <td style="text-align: right;" ng-class='values1.Sep_16_exp'>{{values1.Sep_16}}</td>
+                <td style="text-align: right;">{{values1.Oct_16}}</td>
+                <td style="text-align: right;">{{values1.Nov_16}}</td>
+                <td style="text-align: right;">{{values1.Dec_16}}</td>
+                <td style="text-align: right;">{{values1.Jan_17}}</td>
+                <td style="text-align: right;">{{values1.Feb_17}}</td>
+                <td style="text-align: right;">{{values1.Mar_17}}</td>
+                <td style="text-align: right;">{{values1 | rowaverage | currency:"":0 }}</td>
+              </tr>
+            <tbody>
+              <tr>
+                <th colspan=2 fixed style="background-color: #F5F5DC;">Average</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{ cate_stay | average:"Apr_15" | currency:"":1}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_stay | average:"May_15" | currency:"":1}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_stay | average:"Jun_15" | currency:"":1}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_stay | average:"Jul_15" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Aug_15" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Sep_15" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Oct_15" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Nov_15" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Dec_15" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Jan_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Feb_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Mar_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Apr_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"May_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Jun_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Jul_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Aug_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Sep_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Oct_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Nov_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Dec_16" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Jan_17" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;" >{{cate_stay | average:"Feb_17" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_stay | average:"Mar_17" | currency:"":1}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">-</th>
+              </tr>
+            </tbody>
+            </tbody>
+          </table>
+        <!-- </scrollable-table> -->
+
+        <br/>
+        <br/>
+        <!-- <scrollable-table columncount=9 tabledata='cate_stay'> -->
+          <table class="table table-bordered">
+            <thead >
+              <tr style="background-color: #4bc0c0;">
+               <th fixed style="width:10%">Change %</th>
+               <th fixed>Department</th>
+               <th style="text-align: right;">Apr-15</th>
+               <th style="text-align: right;">May-15</th>
+               <th style="text-align: right;">Jun-15</th>
+               <th style="text-align: right;">Jul-15</th>
+               <th style="text-align: right;">Aug-15</th>
+               <th style="text-align: right;">Sep-15</th>
+               <th style="text-align: right;">Oct-15</th>
+               <th style="text-align: right;">Nov-15</th>
+               <th style="text-align: right;">Dec-15</th>
+               <th style="text-align: right;">Jan-16</th>
+               <th style="text-align: right;">Feb-16</th>
+               <th style="text-align: right;">Mar-16</th>
+               <th style="text-align: right;">Apr-16</th>
+               <th style="text-align: right;">May-16</th>
+               <th style="text-align: right;">Jun-16</th>
+               <th style="text-align: right;">Jul-16</th>
+               <th style="text-align: right;">Aug-16</th>
+               <th style="text-align: right;">Sep-16</th>
+               <th style="text-align: right;">Oct-16</th>
+               <th style="text-align: right;">Nov-16</th>
+               <th style="text-align: right;">Dec-16</th>
+               <th style="text-align: right;">Jan-17</th>
+               <th style="text-align: right;">Feb-17</th>
+               <th style="text-align: right;">Mar-17</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat='(k,items) in cate_stay'>
+              <tr ng-repeat='values1 in items' index='{{ index}}' ng-click='expand_2(k)' consolidated ng-show='!values1.is_regular'>
+                <th colspan=2 fixed style="background-color: #F5F5DC;">{{ values1.name }}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">-</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.May_15_g | currency:"":0}}%</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jun_15_g | currency:"":0}}%</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jul_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Feb_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Apr_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.May_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jun_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jul_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_17_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Feb_17_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_17_g | currency:"":0}}%</th>
+
+              </tr>
+              <tr ng-repeat='values1 in items' index='{{ index}}'  ng-show='values1.is_regular && expanded_2[k]'>
+                <td fixed>{{values1.Hospital}}</td>
+                <td fixed>{{values1.Department}}</td>
+                <td style="text-align: right;">-</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.May_15_g)'>{{values1.May_15_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jun_15_g)'>{{values1.Jun_15_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jul_15_g)'>{{values1.Jul_15_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Aug_15_g)'>{{values1.Aug_15_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Sep_15_g)'>{{values1.Sep_15_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Oct_15_g)'>{{values1.Oct_15_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Nov_15_g)'>{{values1.Nov_15_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Dec_15_g)'>{{values1.Dec_15_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jan_16_g)'>{{values1.Jan_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Feb_16_g)'>{{values1.Feb_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Mar_16_g)'>{{values1.Mar_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Apr_16_g)'>{{values1.Apr_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.May_16_g)'>{{values1.May_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jun_16_g)'>{{values1.Jun_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jul_16_g)'>{{values1.Jul_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Aug_16_g)'>{{values1.Aug_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Sep_16_g)'>{{values1.Sep_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Oct_16_g)'>{{values1.Oct_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Nov_16_g)'>{{values1.Nov_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Dec_16_g)'>{{values1.Dec_16_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jan_17_g)'>{{values1.Jan_17_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Feb_17_g)'>{{values1.Feb_17_g | currency:"":0}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Mar_17_g)'>{{values1.Mar_17_g | currency:"":0}}%</td>
+              </tr>
+            </tbody>
+          </table>
+        </scrollable-table>
+      </div>
+  </div>
+
+  <div class="modal fade" id="addFilters" role="dialog">
+  <div class="modal-dialog" style="width: 400px;">
+  <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Select Filters</h4>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class='filetr_cat'>
+            <div class='row'>
+              <div class='col-lg-6'>
+                <div class='form-group'>
+                  <label>Hospital</label>
+                  <select class='form-control' ng-model='hospital_id' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value='Hospital 1'>Hospital 1</option>
+                    <option value='Hospital 2'>Hospital 2</option>
+                    <option value='Hospital 3'>Hospital 3</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-6'>
+                <div class='form-group'>
+                  <label>Department</label>
+                  <select class='form-control' ng-model='department_id' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value='Cardiology'>Cardiology</option>
+                    <option value='Orthopaedic Surgery'>Orthopaedic Surgery</option>
+                    <option value='Cosmetic & Plastic Surgery'>Cosmetic & Plastic Surgery</option>
+                    <option value='General Medicine'>General Medicine</option>
+                    <option value='Nephrology'>Nephrology</option>
+                    <option value='Vascular Surgery'>Vascular Surgery</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click='categories_by()'>Filter</button>
+          <button type="submit" class="btn btn-default" ng-click='resetDropDown()'>Clear Filters</button>
+      </div>
+    </div>
+  </div>
+</div>

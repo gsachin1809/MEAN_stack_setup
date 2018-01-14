@@ -1,0 +1,109 @@
+<div class="modal fade" id="addFilters" role="dialog">
+  <div class="modal-dialog">
+  <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Select Filters</h4>
+      </div>
+      <div class="modal-body">
+        <div class="bootstrap-admin-panel-content">
+          <div class='filetr_cat'>
+            <div class='row'>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Categorised By</label>
+                  <select class='form-control' ng-model='cate_id' ng-change='categories_by()'>
+                    <option value='Hospital'>Hospital</option>
+                    <option value='IP_OP'>IP/OP</option>
+                    <option value='Department'>Department</option>
+                    <option value='Doctors'>Doctors</option>
+                    <option value='Profile'>Profile</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Hospital</label>
+                  <select class='form-control' ng-model='hospital_id' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value='Hospital _ 1'>Hospital _ 1</option>
+                    <option value='Hospital _ 2'>Hospital _ 2</option>
+                    <option value='Hospital _ 3'>Hospital _ 3</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>IP/OP</label>
+                  <select class='form-control' ng-model='ip_op' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value='IP'>IP</option>
+                    <option value='OP'>OP</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Department</label>
+                  <select class='form-control' ng-model='department_id' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value='Cardiology'>Cardiology</option>
+                    <option value='Orthopaedic Surgery'>Orthopaedic Surgery</option>
+                    <option value='Cosmetic & Plastic Surgery'>Cosmetic & Plastic Surgery</option>
+                    <option value='General Medicine'>General Medicine</option>
+                    <option value='Nephrology'>Nephrology</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Doctors</label>
+                  <select class='form-control' ng-model='doctor_id' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value="Doctor _1">Doctor _1</option>
+                    <option value="Doctor _2">Doctor _2</option>
+                    <option value="Doctor _32">Doctor _32</option>
+                    <option value="Doctor _345">Doctor _345</option>
+                    <option value="Doctor_ 4">Doctor_ 4</option>
+                    <option value="Doctor _ 180">Doctor _ 180</option>
+                    <option value="Doctor_ 5">Doctor_ 5</option>
+                    <option value="Doctor _ 20">Doctor _ 20</option>
+                    <option value="Doctor _ 421">Doctor _ 421</option>
+                    <option value="Doctor _3">Doctor _3</option>
+                    <option value="Doctor _ 220">Doctor _ 220</option>
+                    <option value="Doctor _ 22">Doctor _ 22</option>
+                    <option value="Doctor _456">Doctor _456</option>
+                    <option value="Doctor _4">Doctor _4</option>
+                    <option value="Doctor _423">Doctor _423</option>
+                    <option value="Doctor _325">Doctor _325</option>
+                    <option value="Doctor _725">Doctor _725</option>
+                    <option value="Doctor _342">Doctor _342</option>
+                    <option value="Doctor _ 396">Doctor _ 396</option>
+                    <option value="Doctor _ 3234">Doctor _ 3234</option>
+                    <option value="Doctor _2467">Doctor _2467</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Profile</label>
+                  <select class='form-control' ng-model='profile_id' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value="Cash">Cash</option>
+                    <option value="TPA">TPA</option>
+                    <option value="Government">Government</option>
+                    <option value="Corporate">Corporate</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" ng-click='add_filter()'></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

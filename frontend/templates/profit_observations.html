@@ -1,0 +1,316 @@
+<style type="text/css">
+  .headings{
+    background-color: #F5F5DC;
+  }
+  table{
+    font-size: 10pt;
+  }
+</style>
+
+
+
+<table class="table table-bordered">
+    <thead>
+     <tr>
+         <th style="width: 5%; font-size: 10pt">S no</th>
+         <th style="font-size: 10pt">Observation</th>
+         <th style="width: 15%; font-size: 10pt">Action</th>
+     </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>1</td>
+          <td><div   class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="text-muted bootstrap-admin-box-title">Composition of gross margin has reduced from 54% in FY16 to 41% in FY17 for Hospital -1 </div>
+                </div>
+                <div class="bootstrap-admin-panel-content">
+                  <!-- <scrollable-table columncount=15 tabledata='summary'> -->
+          <table class="table table-bordered" style="width: 400px">
+                    <thead>
+                      <tr>
+                        <th fixed style="width:40%">Business Vertical</th>
+                        <!-- <th style="text-align: right;">Apr-15</th>
+                        <th style="text-align: right;">May-15</th>
+                        <th style="text-align: right;">Jun-15</th>
+                        <th style="text-align: right;">Jul-15</th>
+                        <th style="text-align: right;">Aug-15</th>
+                        <th style="text-align: right;">Sep-15</th>
+                        <th style="text-align: right;">Oct-15</th>
+                        <th style="text-align: right;">Nov-15</th>
+                        <th style="text-align: right;">Dec-15</th>
+                        <th style="text-align: right;">Jan-16</th>
+                        <th style="text-align: right;">Feb-16</th>
+                        <th style="text-align: right;">Mar-16</th> -->
+                        <th style="text-align: right;">FY16</th>
+                        <!-- <th style="text-align: right;">Apr-16</th>
+                        <th style="text-align: right;">May-16</th>
+                        <th style="text-align: right;">Jun-16</th>
+                        <th style="text-align: right;">Jul-16</th>
+                        <th style="text-align: right;">Aug-16</th>
+                        <th style="text-align: right;">Sep-16</th>
+                        <th style="text-align: right;">Oct-16</th>
+                        <th style="text-align: right;">Nov-16</th>
+                        <th style="text-align: right;">Dec-16</th>
+                        <th style="text-align: right;">Jan-17</th>
+                        <th style="text-align: right;">Feb-17</th>
+                        <th style="text-align: right;">Mar-17</th> -->
+                        <th style="text-align: right;">FY17</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat='values in summary'>
+                        <td style="background-color: #F5F5DC;" fixed>{{values.Business_vertical}}</td>
+                        <!-- <td style="text-align: right;">{{values.Apr_15}}</td>
+                        <td style="text-align: right;">{{values.May_15}}</td>
+                        <td style="text-align: right;">{{values.Jun_15}}</td>
+                        <td style="text-align: right;">{{values.Jul_15}}</td>
+                        <td style="text-align: right;">{{values.Aug_15}}</td>
+                        <td style="text-align: right;">{{values.Sep_15}}</td>
+                        <td style="text-align: right;">{{values.Oct_15}}</td>
+                        <td style="text-align: right;">{{values.Nov_15}}</td>
+                        <td style="text-align: right;">{{values.Dec_15}}</td>
+                        <td style="text-align: right;">{{values.Jan_16}}</td>
+                        <td style="text-align: right;">{{values.Feb_16}}</td>
+                        <td style="text-align: right;">{{values.Mar_16}}</td> -->
+                        <td style="text-align: right;" ng-class="values.FY16_exp">{{values.FY16}}%</td>
+                        <!-- <td style="text-align: right;">{{values.Apr_16}}</td>
+                        <td style="text-align: right;">{{values.May_16}}</td>
+                        <td style="text-align: right;">{{values.Jun_16}}</td>
+                        <td style="text-align: right;">{{values.Jul_16}}</td>
+                        <td style="text-align: right;">{{values.Aug_16}}</td>
+                        <td style="text-align: right;">{{values.Sep_16}}</td>
+                        <td style="text-align: right;">{{values.Oct_16}}</td>
+                        <td style="text-align: right;">{{values.Nov_16}}</td>
+                        <td style="text-align: right;">{{values.Dec_16}}</td>
+                        <td style="text-align: right;">{{values.Jan_17}}</td>
+                        <td style="text-align: right;">{{values.Feb_17}}</td>
+                        <td style="text-align: right;">{{values.Mar_17}}</td> -->
+                        <td style="text-align: right;" ng-class="values.FY17_exp">{{values.FY17}}%</td>
+                      </tr>
+                      <tr ng-show='!is_prog && is_more'>
+                        <td colspan="5" class='text-center'>
+                          <a ng-click='view_more()'>View More</a>
+                        </td>
+                      </tr>
+                      <tr ng-show='!is_prog && organizations.length == 0'>
+                        <td colspan="5" class='text-center'>
+                          No Data
+                        </td>
+                      </tr>
+                      <tr ng-show='is_prog'>
+                        <td colspan="5" class='text-center'>
+                          <i class='fa fa-spin fa-refresh'></i> Loading..
+                        </td>
+                      </tr>
+                    </tbody>
+          </table>
+        </scrollable-table>
+                </div>
+            </div>
+          </td>
+          <td>
+            <div class='btn-group' style="padding-top: 40px;">
+              <a  class="btn btn-default"><i class="fa"></i> Rectify</a>
+              <a  class="btn btn-info"><i class="fa" aria-hidden="true"></i> Ignore</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+            <td>2</td>
+    <td><div   class="panel panel-default">
+      <div class="panel-heading">
+          <div class="text-muted bootstrap-admin-box-title">EBITDA per occupied bed was lower at Rs.979 for hospital 1 in August 2015</div>
+      </div>
+      <div class="bootstrap-admin-panel-content">
+        <!-- <scrollable-table columncount=15 tabledata='profit_obs2'> -->
+          <table class="table table-bordered" style="width: 600px">
+                    <thead>
+                      <tr>
+                        <th fixed style="width:20%">Business Vertical</th>
+                        <!-- <th>Apr-15</th>
+                        <th>May-15</th> -->
+                        <th style="text-align: right;">Jun-15</th>
+                        <th style="text-align: right;">Jul-15</th>
+                        <th style="text-align: right;">Aug-15</th>
+                        <th style="text-align: right;">Sep-15</th>
+                        <th style="text-align: right;">Oct-15</th>
+                        <!-- <th>Nov-15</th>
+                        <th>Dec-15</th>
+                        <th>Jan-16</th>
+                        <th>Feb-16</th>
+                        <th>Mar-16</th>
+                        <th>Apr-16</th>
+                        <th>May-16</th>
+                        <th>Jun-16</th>
+                        <th>Jul-16</th>
+                        <th>Aug-16</th>
+                        <th>Sep-16</th>
+                        <th>Oct-16</th>
+                        <th>Nov-16</th>
+                        <th>Dec-16</th>
+                        <th>Jan-17</th>
+                        <th>Feb-17</th>
+                        <th>Mar-17</th> -->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat='values in profit_obs2'>
+                        <td style="background-color: #F5F5DC;" fixed>{{values.Business_vertical}}</td>
+                        <!-- <td >{{values.Apr_15}}</td>
+                        <td >{{values.May_15}}</td> -->
+                        <td style="text-align: right;">{{values.Jun_15}}</td>
+                        <td style="text-align: right;">{{values.Jul_15}}</td>
+                        <td style="text-align: right;" ng-class="values.Aug_15_exp">{{values.Aug_15}}</td>
+                        <td style="text-align: right;">{{values.Sep_15}}</td>
+                        <td style="text-align: right;">{{values.Oct_15}}</td>
+                        <!-- <td >{{values.Nov_15}}</td>
+                        <td >{{values.Dec_15}}</td>
+                        <td >{{values.Jan_16}}</td>
+                        <td >{{values.Feb_16}}</td>
+                        <td >{{values.Mar_16}}</td>
+                        <td >{{values.Apr_16}}</td>
+                        <td >{{values.May_16}}</td>
+                        <td >{{values.Jun_16}}</td>
+                        <td >{{values.Jul_16}}</td>
+                        <td >{{values.Aug_16}}</td>
+                        <td >{{values.Sep_16}}</td>
+                        <td >{{values.Oct_16}}</td>
+                        <td >{{values.Nov_16}}</td>
+                        <td >{{values.Dec_16}}</td>
+                        <td >{{values.Jan_17}}</td>
+                        <td >{{values.Feb_17}}</td>
+                        <td >{{values.Mar_17}}</td> -->
+                      </tr>
+                      <tr ng-show='!is_prog && is_more'>
+                        <td colspan="5" class='text-center'>
+                          <a ng-click='view_more()'>View More</a>
+                        </td>
+                      </tr>
+                      <tr ng-show='!is_prog && organizations.length == 0'>
+                        <td colspan="5" class='text-center'>
+                          No Data
+                        </td>
+                      </tr>
+                      <tr ng-show='is_prog'>
+                        <td colspan="5" class='text-center'>
+                          <i class='fa fa-spin fa-refresh'></i> Loading..
+                        </td>
+                      </tr>
+                    </tbody>
+          </table>
+        </scrollable-table>
+      </div>
+      </div>
+      <td>
+        <div class='btn-group' style="padding-top: 40px;">
+          <a  class="btn btn-default"><i class="fa"></i> Rectify</a>
+          <a  class="btn btn-info"><i class="fa" aria-hidden="true"></i> Ignore</a>
+        </div>
+      </td>
+    </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><div   class="panel panel-default">
+      <div class="panel-heading">
+          <div class="text-muted bootstrap-admin-box-title">EBITDA for cardiology department in Hospital 2 for the month of Sep 2016 was higher at Rs.13 lacs</div>
+      </div>
+      <div class="bootstrap-admin-panel-content">
+        <!-- <scrollable-table columncount=15 tabledata='observation2'> -->
+          <table class="table table-bordered" style="width: 600px">
+            <thead>
+              <tr>
+                <th fixed style="width:15%">Business_vertical</th>
+                <th fixed style="width:15%">Department</th>
+        <!--         <th>Apr-15</th>
+                <th>May-15</th>
+                <th>Jun-15</th>
+                <th>Jul-15</th>
+                <th>Aug-15</th>
+                <th>Sep-15</th>
+                <th>Oct-15</th>
+                <th>Nov-15</th>
+                <th>Dec-15</th>
+                <th>Jan-16</th>
+                <th>Feb-16</th>
+                <th>Mar-16</th>
+                <th>FY16</th>
+                <th>Apr-16</th>
+                <th>May-16</th>
+                <th>Jun-16</th> -->
+                <th style="text-align: right;">Jul-16</th>
+                <th style="text-align: right;">Aug-16</th>
+                <th style="text-align: right;">Sep-16</th>
+                <th style="text-align: right;">Oct-16</th>
+                <th style="text-align: right;">Nov-16</th>
+                <!-- <th>Dec-16</th>
+                <th>Jan-17</th>
+                <th>Feb-17</th>
+                <th>Mar-17</th>
+                <th>FY17</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat='values in observation2'>
+                <td style="background-color: #F5F5DC" fixed>{{values.Business_vertical}}</td>
+                <td style="background-color: #F5F5DC" fixed>{{values.Department}}</td>
+                <!-- <td >{{values.Apr_15}}</td>
+                <td >{{values.May_15}}</td>
+                <td >{{values.Jun_15}}</td>
+                <td >{{values.Jul_15}}</td>
+                <td >{{values.Aug_15}}</td>
+                <td >{{values.Sep_15}}</td>
+                <td >{{values.Oct_15}}</td>
+                <td >{{values.Nov_15}}</td>
+                <td >{{values.Dec_15}}</td>
+                <td >{{values.Jan_16}}</td>
+                <td >{{values.Feb_16}}</td>
+                <td >{{values.Mar_16}}</td>
+                <td >{{values.FY16}}</td>
+                <td >{{values.Apr_16}}</td>
+                <td >{{values.May_16}}</td>
+                <td >{{values.Jun_16}}</td> -->
+                <td style="text-align: right;">{{values.Jul_16}}</td>
+                <td style="text-align: right;">{{values.Aug_16}}</td>
+                <td style="text-align: right;" ng-class="values.Sep_16_exp">{{values.Sep_16}}</td>
+                <td style="text-align: right;">{{values.Oct_16}}</td>
+                <td style="text-align: right;">{{values.Nov_16}}</td>
+                <!-- <td >{{values.Dec_16}}</td>
+                <td >{{values.Jan_17}}</td>
+                <td >{{values.Feb_17}}</td>
+                <td >{{values.Mar_17}}</td>
+                <td >{{values.FY17}}</td> -->
+              </tr>
+              <tr ng-show='!is_prog && is_more'>
+                <td colspan="5" class='text-center'>
+                  <a ng-click='view_more()'>View More</a>
+                </td>
+              </tr>
+              <tr ng-show='!is_prog && organizations.length == 0'>
+                <td colspan="5" class='text-center'>
+                  No Data
+                </td>
+              </tr>
+              <tr ng-show='is_prog'>
+                <td colspan="5" class='text-center'>
+                  <i class='fa fa-spin fa-refresh'></i> Loading..
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        <!-- </scrollable-table> -->
+      </div>
+</div></td>
+          <td>
+            <div class='btn-group' style="padding-top: 40px;">
+              <a  class="btn btn-default"><i class="fa"></i> rectify</a>
+              <a  class="btn btn-info"><i class="fa" aria-hidden="true"></i> Ignore</a>
+            </div>
+          </td>
+        </tr>
+      </div>
+</div></td>
+        </tr>
+    </tbody>
+</table>

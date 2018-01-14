@@ -2,9 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Home page</title>
+    <title>Project</title>
+    <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.js"  ></script>
+    <script type="text/javascript" src="vendor/angularjs/angular.min.js"  ></script>
+    <script type="text/javascript" src="vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"  ></script>
+    <script src="vendor/angularjs/angular-ui-router.min.js"></script>
+    <script src="vendor/angularjs/angular-locker.min.js"></script>
+    <script src="vendor/angularjs/angular-resource.min.js"></script>
+    <script src="vendor/moment/moment.min.js"></script>
+    <link rel="stylesheet" href="vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/templates.js"></script>
+    <script type="text/javascript" src="app/controllers.js"></script>
+    <script type="text/javascript" src="app/services.js"></script>
+    <script type="text/javascript" src="app/directives.js"></script>
+   <script type="text/javascript" src="app/filters.js"></script>
+
+    <!-- <script type="text/javascript" src="app/controllers.min.js"  ></script> -->
+
   </head>
-  <body>
-    <h1>this is home page</h1>
+  <body ng-app='pms' ng-controller="RootController" ng-cloak>
+    <div ui-view="root_view"></div>
   </body>
 </html>

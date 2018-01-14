@@ -1,0 +1,44 @@
+<div class="modal fade" id="addOrganization" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" ng-click='form_init()'>&times;</button>
+          <h4 class="modal-title">Add Organization</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger" ng-show='error.length > 0'>
+            {{ error}}
+          </div>
+          <div class="alert alert-success" ng-show='success.length > 0'>
+            {{ success }}
+          </div>
+          <div class="row">
+            <div class='col-lg-12'>
+              <div class="form-group">
+                <label for="acronym">Organization Name*</label>
+                <input type="text" class="form-control" placeholder="Organization Name" ng-model='input.org_name' />
+                <div class='err' ng-show='input.org_name_err.length > 0'>{{ input.org_name_err }}</div>
+              </div>
+            </div>
+            <div class='col-lg-12'>
+              <div class="form-group">
+                <label for="acronym">State*</label>
+                <select class='form-control' ng-model='input.state_id'>
+                  <option value="">Select</option>
+                  <option value="{{ state.id }}" ng-repeat='state in states'>{{ state.location_name}}</option>
+                </select>
+                <div class='err' ng-show='input.state_err.length > 0'>{{ input.state_err }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" ng-click='add_organization()' ng-show='!add_prog'>Save</button>
+          <button type="button" class="btn btn-primary" ng-show='add_prog'>
+            <i class='fa fa-spin fa-refresh'></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

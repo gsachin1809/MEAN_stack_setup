@@ -1,0 +1,104 @@
+<div class='dashboard'>
+  <div class='row'>
+    <div class='col-lg-7 col-md-7' style="padding-top:40px;">
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-12 col-xs-12' >
+          <div class='cards blue'>
+            <div class='header'>Last 30 days Revenue</div>
+            <div class='data'>
+              <span>Rs 25.7 Cr <i class="fa fa-long-arrow-up green" aria-hidden="true"></i>&nbsp;<i class='prog green'>15%</i></span>
+            </div>
+            <i class="fa fa-square-o first" aria-hidden="true"></i>
+            <i class="fa fa-square-o second" aria-hidden="true"></i>
+            <i class="fa fa-square-o third" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class='col-lg-4 col-md-4 col-sm-12 col-xs-12' >
+          <div class='cards blue'>
+            <div class='header'>Last 30 days EBITDA</div>
+            <div class='data'>
+              <span>Rs 6.3 Cr <i class="fa fa-long-arrow-up green" aria-hidden="true"></i>&nbsp;<i class='prog green'>2%</i></span>
+            </div>
+            <i class="fa fa-square-o first" aria-hidden="true"></i>
+            <i class="fa fa-square-o second" aria-hidden="true"></i>
+            <i class="fa fa-square-o third" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class='col-lg-4 col-md-4 col-sm-12 col-xs-12' >
+          <div class='cards blue'>
+            <div class='header'>Last 30 days Cash Generated from Operations</div>
+            <div class='data'>
+              <span>Rs 4.5 Cr <i class="fa fa-long-arrow-down red" aria-hidden="true"></i>&nbsp;<i class='prog red'>5%</i></span>
+            </div>
+            <i class="fa fa-square-o first" aria-hidden="true"></i>
+            <i class="fa fa-square-o second" aria-hidden="true"></i>
+            <i class="fa fa-square-o third" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='col-lg-12' style="padding-top:80px;">
+          <canvas id="line_chart" height="300" width='700' style="margin:20px auto;"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class='col-lg-5 col-md-5'>
+      <div class='ch_section'>
+        <div class='header'>
+          <h4>Financial metric<h4>
+        </div>
+        <div class='data'>
+          <div class='row'>
+            <div class='col-lg-6 ch'>
+              <canvas width='150' id="canvas-Revenue"></canvas>
+              <span class="preview-textfield" style='left:65px; font-size: 12px;'><b>Rs 255 Cr</b></span>
+              <span class='chart_heading'>Revenue</span>
+            </div>
+            <div class='col-lg-6 ch'>
+              <canvas width='150' id="canvas-ebitda"></canvas>
+              <span class="preview-textfield" style='left:65px; font-size: 12px;'><b>Rs 52 Cr</b></span>
+              <span class='chart_heading'>EBITDA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='ch_section'>
+        <div class='header'>
+          <h4>Operational metric<h4>
+        </div>
+        <div class='data'>
+          <div class='row'>
+            <div class='col-lg-6 ch'>
+              <canvas width='150' id="canvas-ip"></canvas>
+              <span class="preview-textfield" style='left:75px; font-size: 12px;'><b>8,100</b></span>
+              <span class='chart_heading'>IP Volume</span>
+            </div>
+            <div class='col-lg-6 ch'>
+              <canvas width='150' id="canvas-op"></canvas>
+              <span class="preview-textfield" style='left:71px; font-size: 12px;'><b>90,000</b></span>
+              <span class='chart_heading' >OP Volume</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='ch_section'>
+        <div class='header'>
+          <h4>Unit economics<h4>
+        </div>
+        <div class='data'>
+          <div class='row'>
+            <div class='col-lg-6 ch'>
+              <canvas width='150' id="earning_ruppe"></canvas>
+              <span class='chart_heading' style="float: right;">Earning a rupee</span>
+            </div>
+            <div class='col-lg-6 ch'>
+              <canvas width='150' id="spending_ruppe"></canvas>
+              <span class='chart_heading' style="float: right;">Spending a rupee</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<div class='row'>
+  <div class='col-sm-2'>
+  </div>
+  <div class='col-sm-8' ng-init="init();">
+    <div class="box box-info">
+      <div class="box-header with-border text-center">
+        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left'>
+          <h3 class="box-title" style=''><b>{{ title }} </b></h3>
+        </div>
+      </div>
+      <div class="form-horizontal">
+        <div class="container box-body" style="width:100%;">
+          <div style="padding:0px;">
+            <div class="alert alert-danger" ng-show='error.length > 0'>
+              {{ error}}
+            </div>
+            <div class="alert alert-success" ng-show='success.length > 0'>
+              {{ success}}
+            </div>
+            <div class='row'>
+              <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6' style="padding:0px;">
+                  <div class='form-group' style="padding:5px;">
+                    <label class="col-sm-12">Name <font style='color:red'> *</font><span style='color:red;'  ng-show='name_err.length > 0'>{{ name_err }} </span></label>
+
+                    <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                      <input class='form-control' type='text' ng-model='user_data.first_name' placeholder="First Name"/>
+                  </div>
+                  <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                    <input class='form-control' type='text' ng-model='user_data.last_name' placeholder="Last Name"/>
+                </div>
+                  </div>
+                </div>
+                <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                  <div class='form-group' style="padding:5px;">
+                    <label>Email <font style='color:red'> *</font></label>
+                    <span style='color:red; float:right'  ng-show='email_err.length > 0'>{{ email_err }} </span>
+                    <input class='form-control' type='text' ng-model='user_data.email' placeholder="Email"/>
+                  </div>
+                </div>
+                <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                  <div class='form-group' style="padding:5px;">
+                    <label>Contact Number <font style='color:red'> *</font></label>
+                    <span style='color:red; float:right'  ng-show='contact_err.length > 0'>{{ contact_err }} </span>
+                    <input class='form-control' type='text' ng-model='user_data.phone_number' placeholder="Contact Number"/>
+                  </div>
+                </div>
+                <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                  <div class='form-group' style="padding:5px;">
+                    <label>Organization<font style='color:red'> *</font></label>
+                    <span style='color:red; float:right'  ng-show='designation_err.length > 0'>{{ organization_err }} </span>
+                    <select name="singleSelect" ng-model="user_data.organization_id" class='form-control'>
+                       <option ng-repeat="option in organizations" value="{{option.org_id}}">{{option.org_name}}</option>
+                    </select>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right' style="padding:15px;">
+                <button type='button'  class='btn btn-primary' ng-click="close_user()">Cancel</button>
+                <button type='button' ng-show='!is_adding' class='btn btn-success' ng-click="update_user(user_data)">Submit</button>
+                <button ng-show='is_adding' type='button' class='btn btn-success'>
+                  <i class='fa fa-spin fa-spinner'></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

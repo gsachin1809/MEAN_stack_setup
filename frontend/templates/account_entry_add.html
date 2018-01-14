@@ -1,0 +1,159 @@
+<div class="row">
+    <!-- content -->
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-header">
+                    <h4>Add Account Entry</h4>
+                </div>
+            </div>
+        </div>  
+        <div class="row">
+          <div class="col-lg-12 text-right">
+              <div class="form-group" ng-show="!is_add">
+                <input type='file' id='upload_account_entry' onchange="angular.element(this).scope().upload_account_entry_file(this)" style='display:none'/>
+                <a  class=""  ng-show="!is_uploading" href="/template/account_entry.xlsx" style="margin-right:5px;" target="_blank">Download Template</a>
+                <button class='btn btn-primary'  ng-show="!is_uploading" ng-click='show_upload_account_entry_popup()'>Upload</button>
+                <button class='btn btn-primary'  ng-show="is_uploading" disabled>Uploading</button>
+                <button class='btn btn-primary' ng-click='is_add=true;'>Add</button>
+              </div>
+          </div>
+        </div>
+        <div class="add_form" ng-show="is_add">
+          <div class="row" >
+            <div class='col-lg-12'>
+              <label for="acronym">Debit Account</label>
+            </div>
+            <div class="col-lg-5 text-center">
+              <div class="form-group">
+                <label for="acronym">Account Name*</label>
+                <input type="text" class="form-control" placeholder="Account Name" ng-model='input.name' />
+                <div class='err' ng-show='input.name_err.length > 0'>{{ input.name_err }}</div>
+              </div>
+            </div>
+            <div class='col-lg-5 text-center'>
+              <div class="form-group">
+                <label for="acronym">Amount*</label>
+                <input type="text" class="form-control" placeholder="Amount" ng-model='input.email' />
+                <div class='err' ng-show='input.email_err.length > 0'>{{ input.email_err }}</div>
+              </div>
+            </div>
+            <div class='col-lg-2' style="padding-top: 26px;">
+              <div class="form-group">
+                <span style="font-size:26px;"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+              </div>
+            </div>
+            <div class='col-lg-12'>
+              <label for="acronym">Credit Account</label>
+            </div>
+            <div class="col-lg-5 text-center">
+              <div class="form-group">
+                <label for="acronym">Account Name*</label>
+                <input type="text" class="form-control" placeholder="Account Name" ng-model='input.name' />
+                <div class='err' ng-show='input.name_err.length > 0'>{{ input.name_err }}</div>
+              </div>
+            </div>
+            <div class='col-lg-5 text-center'>
+              <div class="form-group">
+                <label for="acronym">Amount*</label>
+                <input type="text" class="form-control" placeholder="Amount" ng-model='input.email' />
+                <div class='err' ng-show='input.email_err.length > 0'>{{ input.email_err }}</div>
+              </div>
+            </div>
+            <div class='col-lg-2' style="padding-top: 26px;">
+              <div class="form-group">
+                <span style="font-size:26px;"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="acronym">Description*</label>
+                <input type="text" class="form-control" placeholder="Account Name" ng-model='input.name' />
+                <div class='err' ng-show='input.name_err.length > 0'>{{ input.name_err }}</div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="acronym">Date*</label>
+                <input type="text" class="form-control" placeholder="Date" ng-model='input.name' />
+                <div class='err' ng-show='input.name_err.length > 0'>{{ input.name_err }}</div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="acronym">Projec Name</label>
+                <input type="text" class="form-control" placeholder="Projec Name" ng-model='input.name' />
+                <div class='err' ng-show='input.name_err.length > 0'>{{ input.name_err }}</div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="acronym">Location</label>
+                <input type="text" class="form-control" placeholder="Location" ng-model='input.name' />
+                <div class='err' ng-show='input.name_err.length > 0'>{{ input.name_err }}</div>
+              </div>
+            </div>
+            <div class="col-lg-12 text-right">
+              <div class="form-group">
+                <button type="button" class="btn btn-primary" ng-show='!add_prog'>Add</button>
+                <button type="button" class="btn btn-primary" ng-show='add_prog'>
+                  <i class='fa fa-spin fa-refresh'></i>
+                </button>
+                <button type="button" class="btn btn-primary" ng-click='is_add=false;'ng-show='!add_prog'>Cancel</button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="form-group">
+              <button class='btn btn-primary' ng-click='search_user()'>Commit</button>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th style='width:15%'>Action</th>
+                  <th>Debit Account</th>
+                  <th>Credit Account </th>
+                  <th>Description</th>
+                  <th>Project Name</th>
+                  <th >Location</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="(k,account_entry_detail) in account_entry_details">
+                  <td style="text-align:center;">
+                    <button class='btn btn-primary'>Delete</button>
+                  </td>
+                  <td>
+                    {{account_entry_detail.debit_account}}
+                  </td>
+                  <td>
+                    {{account_entry_detail.credit_account}}
+                  </td>
+                  <td>
+                    {{account_entry_detail.description}}
+                  </td>
+                  <td>
+                    {{account_entry_detail.project_name}}
+                  </td>
+                  <td>
+                    {{account_entry_detail.location_name}}
+                  </td>
+                </tr>
+                <tr ng-show='account_entry_details.length == 0'>
+                  <td colspan="6" class='text-center'>
+                    No Data
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+</div>

@@ -1,0 +1,420 @@
+<div class="panel panel-default">
+      <div class="panel-heading">
+          <div class="text-muted bootstrap-admin-box-title">
+            Revenue Projections (Apr,17 - Mar,18)
+          </div>
+
+        </div>
+        <div class="bootstrap-admin-panel-content">
+          <div class='filetr_cat' style="font-size: 85%">
+            <div class='row'>
+             <div class="col-lg-10">
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Categorised By</label>
+                  <select class='form-control' ng-model='cate_id' ng-change='categories_by()'>
+                    <option value='Business_vertical'>Business Vertical</option>
+                    <option value='Revenue_stream'>Revenue Stream</option>
+                    <option value='Department'>Project</option>
+                    <option value='Client'>Client</option>
+                    <!-- <option value='Profile'>Profile</option> -->
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <div class="col-lg-3 text-right">
+                    <button class='btn btn-default' style="margin:30px auto;" data-toggle='modal' data-target='#addFilters'>Add Filters</button>
+                  </div>
+                </div>
+              </div>
+              <div class='col-lg-4' style="visibility:hidden">
+                <div class='form-group text-center'>
+                  <label style="margin-right: 60px;">Period</label>
+                  <div class="row">
+                  <div class="col-lg-4">
+                  <select class='form-control'>
+                    <!-- <option value="" disabled selected hidden>Select</option> -->
+                    <option value='April,17'>Apr 17</option>
+                    <option value='MAY,17'>May 17</option>
+                    <option value='June,17'>Jun 17</option>
+                    <option value='July,17'>Jul 17</option>
+                    <option value='August,17'>Aug 17</option>
+                    <option value='September,17'>Sep 17</option>
+                    <option value='october,17'>Oct 17</option>
+                    <option value='November,17'>Nov 17</option>
+                    <option value='December,17'>Dec 17</option>
+                    <option value='january,18'>Jan 18</option>
+                    <option value='February,18'>Feb 18</option>
+                    <option value='March,18'>Mar 18</option>
+                    <!-- <option value='April,16'>Apr 16</option>
+                    <option value='May,16'>May 16</option>
+                    <option value='June,16'>Jun 16</option>
+                    <option value='July,16'>Jul 16</option>
+                    <option value='August,16'>Aug 16</option>
+                    <option value='September,16'>Sep 16</option>
+                    <option value='Ocyober,16'>Oct 16</option>
+                    <option value='November,16'>Nov 16</option>
+                    <option value='December,16'>Dec 16</option>
+                    <option value='januarynuary,17'>Jan 17</option>
+                    <option value='February,17'>Feb 17</option>
+                    <option value='March,17'>Mar 17</option> -->
+                  </select>
+                  </div>
+                  <div class="col-lg-2 text-center" >
+                    <label>To</label>
+                  </div>
+                  <div class="col-lg-4" style="margin-right: 40px;">
+                  <select class='form-control'>
+                    <option value="" disabled selected hidden>Mar 17</option>
+                    <option value='April,15'>Apr 15</option>
+                    <option value='MAY,15'>May 15</option>
+                    <option value='June,15'>Jun 15</option>
+                    <option value='July,15'>Jul 15</option>
+                    <option value='August,15'>Aug 15</option>
+                    <option value='September,15'>Sep 15</option>
+                    <option value='october,15'>Oct 15</option>
+                    <option value='November,15'>Nov 15</option>
+                    <option value='December,15'>Dec 15</option>
+                    <option value='january,16'>Jan 16</option>
+                    <option value='February,16'>Feb 16</option>
+                    <option value='March,16'>Mar 16</option>
+                    <option value='April,16'>Apr 16</option>
+                    <option value='May,16'>May 16</option>
+                    <option value='June,16'>Jun 16</option>
+                    <option value='July,16'>Jul 16</option>
+                    <option value='August,16'>Aug 16</option>
+                    <option value='September,16'>Sep 16</option>
+                    <option value='Ocyober,16'>Oct 16</option>
+                    <option value='November,16'>Nov 16</option>
+                    <option value='December,16'>Dec 16</option>
+                    <option value='januarynuary,17'>Jan 17</option>
+                    <option value='February,17'>Feb 17</option>
+                    <option value='March,17'>Mar 17</option>
+                  </select>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class='col-lg-2' style="visibility:hidden;margin-right: 150px;">
+                <div class='form-group text-center'>
+                  <label>Frequency</label>
+                  <select class='form-control'>
+                    <option value=''>Monthly</option>
+                    <option value=''>Quarterly</option>
+                    <option value=''>Half-yearly</option>
+                    <option value=''>Annually</option>
+                  </select>
+                </div>
+              </div>
+             </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <div class="col-lg-3 text-right">
+                    <!-- <button type="button" class="btn btn-primary" style="margin: 30px auto;width: 150px;"><i class="fa fa-download" aria-hidden="true"></i> Download</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="bootstrap-admin-panel-content">
+        <div class='text-center'>
+        <div class="row">
+         <div class="col-md-8">
+          <canvas id="volumeBottom" width="700" height="240" style="margin:0px auto;">
+          </canvas>
+         </div>
+         <div class="col-md-4">
+          <canvas id="volumeTop" width="300" height="220" style="margin:0px auto;">
+          </canvas>
+         </div>
+        </div>
+        </div>
+
+        <scrollable-table columncount=14 tabledata='cate_volume'>
+          <table class="table table-bordered">
+        		<thead >
+        		  <tr style="background-color: #4bc0c0;">
+        		   <th fixed style="width:10%; color: white;">Business Vertical</th>
+			         <th fixed style="color: white;">Revenue Stream</th>
+			         <th fixed style="color: white;">Project</th>
+			         <th fixed style="color: white;">Client</th>
+			         <!-- <th fixed style="color: white;">Profile</th> -->
+               <th style="color: white; text-align: right;">Apr-17</th>
+               <th style="color: white; text-align: right;">May-17</th>
+               <th style="color: white; text-align: right;">Jun-17</th>
+               <th style="color: white; text-align: right;">Jul-17</th>
+               <th style="color: white; text-align: right;">Aug-17</th>
+               <th style="color: white; text-align: right;">Sep-17</th>
+               <th style="color: white; text-align: right;">Oct-17</th>
+               <th style="color: white; text-align: right;">Nov-17</th>
+               <th style="color: white; text-align: right;">Dec-17</th>
+               <th style="color: white; text-align: right;">Jan-18</th>
+               <th style="color: white; text-align: right;">Feb-18</th>
+               <th style="color: white; text-align: right;">Mar-18</th>
+               <th style="color: white; text-align: right;">Total</th>
+        		  </tr>
+        		</thead>
+        		<tbody ng-repeat='(k,items) in cate_volume'>
+              <tr ng-repeat='values1 in items' index='{{ index}}' ng-click='expand(k)' consolidated ng-show='!values1.is_regular'>
+                <th colspan=4 fixed style="background-color: #F5F5DC;">{{ values1.name }}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Apr_17 | currency:"":2}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.May_17 | currency:"":2}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jun_17 | currency:"":2}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jul_17 | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_17 | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_17 | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_17 | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_17 | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_17 | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_18 | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Feb_18 | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_18 | currency:"":2}}</th>
+                <!-- <th style="text-align: right;background-color: #F5F5DC;">{{values1.Apr_18 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.May_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jun_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jul_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_17 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;" >{{values1.Feb_17 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_17 | currency:"":0}}</th> -->
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1 | rowtotal | currency:"":2}}</th>
+              </tr>
+        		  <tr ng-repeat='values1 in items' index='{{ index}}'  ng-show='values1.is_regular && expanded[k]'>
+        		  	<td fixed>{{values1.Business_vertical}}</td>
+        		  	<td fixed>{{values1.Revenue_stream}}</td>
+        		  	<td fixed>{{values1.Department}}</td>
+        		  	<td fixed>{{values1.Client}}</td>
+        		  	<!-- <td fixed>{{values1.Profile}}</td> -->
+        		  	<td style="text-align: right;">{{values1.Apr_17 | currency:"":2}}</td>
+        		  	<td style="text-align: right;">{{values1.May_17 | currency:"":2}}</td>
+        		  	<td style="text-align: right;">{{values1.Jun_17 | currency:"":2}}</td>
+        		  	<td style="text-align: right;">{{values1.Jul_17 | currency:"":2}}</td>
+        		  	<td style="text-align: right;">{{values1.Aug_17 | currency:"":2}}</td>
+        		  	<td style="text-align: right;" >{{values1.Sep_17 | currency:"":2}}</td>
+        		  	<td style="text-align: right;" >{{values1.Oct_17 | currency:"":2}}</td>
+        		  	<td style="text-align: right;">{{values1.Nov_17 | currency:"":2}}</td>
+        		  	<td style="text-align: right;">{{values1.Dec_17 | currency:"":2}}</td>
+        		  	<td style="text-align: right;">{{values1.Jan_18 | currency:"":2}}</td>
+        		  	<td style="text-align: right;">{{values1.Feb_18 | currency:"":2}}</td>
+        		  	<td style="text-align: right;" >{{values1.Mar_18 | currency:"":2}}</td>
+                <td style="text-align: right;font-weight: bold;">{{values1 | rowtotal | currency:"":2 }}</td>
+        		  </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th colspan=4 fixed style="background-color: #F5F5DC;">Total</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{ cate_volume | total_count:"Apr_17" | currency:"":2}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_volume | total_count:"May_17" | currency:"":2}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_volume | total_count:"Jun_17" | currency:"":2}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_volume | total_count:"Jul_17" | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Aug_17" | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Sep_17" | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Oct_17" | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Nov_17" | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Dec_17" | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Jan_18" | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Feb_18" | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Mar_18" | currency:"":2}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | supertotal | currency:"":2 }}</th>
+              </tr>
+            </tbody>
+        	</table>
+        <!-- </scrollable-table> -->
+
+        <br/>
+        <br/>
+        <!-- <scrollable-table columncount=9 tabledata='cate_volume'> -->
+          <table class="table table-bordered">
+            <thead >
+              <tr style="background-color: #4bc0c0;">
+               <th fixed style="width:10%; color: white;">Growth %</th>
+               <th fixed style="color: white;">Revenue Stream</th>
+               <th fixed style="color: white;">Project</th>
+               <th fixed style="color: white;">Client</th>
+               <!-- <th fixed style="color: white;">Profile</th> -->
+               <th style="color: white; text-align: right;">Apr-17</th>
+               <th style="color: white; text-align: right;">May-17</th>
+               <th style="color: white; text-align: right;">Jun-17</th>
+               <th style="color: white; text-align: right;">Jul-17</th>
+               <th style="color: white; text-align: right;">Aug-17</th>
+               <th style="color: white; text-align: right;">Sep-17</th>
+               <th style="color: white; text-align: right;">Oct-17</th>
+               <th style="color: white; text-align: right;">Nov-17</th>
+               <th style="color: white; text-align: right;">Dec-17</th>
+               <th style="color: white; text-align: right;">Jan-18</th>
+               <th style="color: white; text-align: right;">Feb-18</th>
+               <th style="color: white; text-align: right;">Mar-18</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat='(k,items) in cate_volume'>
+              <tr ng-repeat='values1 in items' index='{{ index}}' ng-click='expand_2(k)' consolidated ng-show='!values1.is_regular'>
+                <th colspan=4 fixed style="background-color: #F5F5DC;">{{ values1.name }}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">-</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.May_17_g | currency:"":2}}%</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jun_17_g | currency:"":2}}%</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jul_17_g | currency:"":2}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_17_g | currency:"":2}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_17_g | currency:"":2}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_17_g | currency:"":2}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_17_g | currency:"":2}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_17_g | currency:"":2}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_18_g | currency:"":2}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Feb_18_g | currency:"":2}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_18_g | currency:"":2}}%</th>
+              </tr>
+              <tr ng-repeat='values1 in items' index='{{ index}}'  ng-show='values1.is_regular && expanded_2[k]'>
+                <td fixed>{{values1.Business_vertical}}</td>
+                <td fixed>{{values1.Revenue_stream}}</td>
+                <td fixed>{{values1.Department}}</td>
+                <td fixed>{{values1.Client}}</td>
+                <!-- <td fixed>{{values1.Profile}}</td> -->
+                <td style="text-align: right;">-</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.May_17_g)'>{{values1.May_17_g | currency:"":2}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jun_17_g)'>{{values1.Jun_17_g | currency:"":2}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jul_17_g)'>{{values1.Jul_17_g | currency:"":2}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Aug_17_g)'>{{values1.Aug_17_g | currency:"":2}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Sep_17_g)'>{{values1.Sep_17_g | currency:"":2}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Oct_17_g)'>{{values1.Oct_17_g | currency:"":2}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Nov_17_g)'>{{values1.Nov_17_g | currency:"":2}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Dec_17_g)'>{{values1.Dec_17_g | currency:"":2}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jan_18_g)'>{{values1.Jan_18_g | currency:"":2}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Feb_18_g)'>{{values1.Feb_18_g | currency:"":2}}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Mar_18_g)'>{{values1.Mar_18_g | currency:"":2}}%</td>
+              </tr>
+            </tbody>
+            <!-- <tbody>
+              <tr>
+                <th colspan=5 fixed style="background-color: #F5F5DC;">Total </th>
+                <th style="text-align: right; background-color: #F5F5DC;">-</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_volume | total_count:"May_15" | currency:"":0}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_volume | total_count:"Jun_15" | currency:"":0}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_volume | total_count:"Jul_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Aug_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Sep_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Oct_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Nov_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Dec_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Jan_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Feb_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Mar_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Apr_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"May_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Jun_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Jul_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Aug_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Sep_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Oct_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Nov_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Dec_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Jan_17" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;" >{{cate_volume | total_count:"Feb_17" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Mar_17" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">-</th>
+              </tr>
+            </tbody> -->
+          </table>
+        </scrollable-table>
+      </div>
+</div>
+
+<div class="modal fade" id="addFilters" role="dialog">
+  <div class="modal-dialog" style="width: 1000px;">
+  <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Select Filters</h4>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class='filetr_cat'>
+            <div class='row'>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Business Vertical</label>
+                  <select class='form-control' ng-model='hospital_id' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value='Roads & Highways'>Roads & Highways</option>
+                    <option value='Ports & Corridors'>Ports & Corridors</option>
+                    <option value='Others'>Others</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Revenue Stream</label>
+                  <select class='form-control' ng-model='ip_op' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value='ETC'>ETC</option>
+                    <option value='Others'>Others</option>
+                    <option value='TMS'>TMS</option>
+                    <option value='RFID'>RFID</option>
+                    <option value='Services'>Services</option>
+                    <option value='Interest Income'>Interest Income</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Project</label>
+                  <select class='form-control' ng-model='department_id' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value='Equipment'>Equipment</option>
+                    <option value='Services'>Services</option>
+                    <option value='Supply'>Supply</option>
+                    <option value='Others'>Others</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Client</label>
+                  <select class='form-control' ng-model='doctor_id' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value="KEPL">KEPL</option>
+                    <option value="MEP">MEP</option>
+                    <option value="GAEPL">GAEPL</option>
+                    <option value="SJEPL">SJEPL</option>
+                    <option value="IHMCL-ATCC">IHMCL-ATCC</option>
+                    <option value="BRNL">BRNL</option>
+                    <option value="GIPL">GIPL</option>
+                    <option value="MTPL">MTPL</option>
+                    <option value="Essae-IHMCL">Essae-IHMCL</option>
+                    <option value="IHMCL-TMS">IHMCL-TMS</option>
+                    <option value="DLDSL">DLDSL</option>
+                    <option value="NTI">NTI</option>
+                    <option value="Others">Others</option>
+                    <option value="ICICI Bank Ltd">ICICI Bank Ltd</option>
+                  </select>
+                </div>
+              </div>
+              <!-- <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Profile</label>
+                  <select class='form-control' ng-model='profile_id' ng-change='categories_by()'>
+                    <option value=''>All</option>
+                    <option value="Implementation">Implementation</option>
+                    <option value="Product Supply">Product Supply</option>
+                    <option value="AMC">AMC</option>
+                  </select>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click='categories_by()'>Filter</button>
+          <button type="submit" class="btn btn-default" ng-click='resetDropDown()'>Clear Filters</button>
+      </div>
+    </div>
+  </div>
+</div>

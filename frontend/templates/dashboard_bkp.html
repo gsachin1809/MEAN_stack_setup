@@ -1,0 +1,87 @@
+<style type="text/css">
+  body{
+    background: url(../assets/img/profile.jpg);
+    background:linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) ), url(../assets/img/profile.jpg) repeat 0 0, url(../assets/img/profile.jpg) repeat 0 0;
+background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.6) ), url(../assets/img/profile.jpg) repeat 0 0;
+    background-size: cover;
+  }
+</style>
+
+<div class='text-center'>
+<div class='row'>
+
+
+	<div class='col-md-4'>
+		<canvas id="dashboardChart" height="200" width='300' style="margin:20px auto;">
+  		</canvas>
+	</div>
+	<div class="col-md-2 text-center"  style="padding:70px 70px 70px">
+		<h3>Mar 120 lacs ↑30%</h3>
+	</div>
+	<div class="col-md-6">
+		<div class='col-md-6' style="padding-top: 10px;">
+		<h2>Revenue</h2>
+		<br/>
+			<ui-knob value="value" options="options"></ui-knob>
+			<br/>
+			<h3>Revenue-1290 lacs</h3>
+		</div>
+		<div class='col-md-6' style="padding-top: 10px;">
+		<h2>EBITDA</h2>
+		<br/>
+			<ui-knob value="value2" options="options2"></ui-knob> 
+			<br/>
+			<h3>EBITDA-112 lacs</h3>
+		</div>
+	</div>
+</div>
+<hr/>
+<div class='row'>
+	<div class='col-md-4'>
+		<canvas id="dashboardChart2" height="200" width='300' style="margin:20px auto;">
+  		</canvas>
+	</div>
+	<div class="col-md-2" style="padding:70px -20px 70px">
+		<h3 style="padding: 50px;">Mar 15 lacs ↓10%</h3>
+	</div>
+	<div class="col-md-6">
+		<div class='col-md-6' style="padding-top: 10px">
+		<h2>IP Volume</h2>
+			<br/>
+			<ui-knob value="value3" options="options3"></ui-knob>
+			<br/>
+			<h3>Volume- 7,926</h3>
+		</div>
+		<div class='col-md-6' style="padding-top: 10px">
+		<h2>OP Volume</h2>
+			<br/>
+			 <ui-knob value="value4" options="options4"></ui-knob>
+			 <h3>Volume-79,825</h3>
+		</div>
+	</div>
+</div>
+<hr/>
+<div class='row'>
+	<div class='col-md-4'>
+		<canvas id="dashboardChart3" height="200" width='300' style="margin:20px auto;">
+  		</canvas>
+	</div>
+	<div class="col-md-2"  style="padding:70px -20px 70px">
+		<h3 style="padding: 50px;">Mar 7 lacs ↓15%</h3>
+	</div>
+	<div class="col-md-6">
+		<div class='col-md-6' style="padding-top: 10px">
+			<canvas id="First" width="250" height="200" style="margin:0px auto;">
+	        </canvas>
+	        <br/>
+	        <h3>How we earn 1 rupee</h3>
+		</div>
+		<div class='col-md-6' style="padding-top: 10px">
+			<canvas id="Second" width="250" height="200" style="margin:0px auto;">
+	      </canvas>
+	      <br/>
+	      <h3>How we spend 1 rupee</h3>
+		</div>
+	</div>
+</div>
+</div>

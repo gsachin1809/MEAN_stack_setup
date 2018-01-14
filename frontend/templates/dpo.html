@@ -1,0 +1,556 @@
+<div class="panel panel-default">
+      <div class="panel-heading">
+          <div class="text-muted bootstrap-admin-box-title"></div>
+
+        </div>
+        <div class="bootstrap-admin-panel-content">
+          <div class='filetr_cat' style="font-size: 85%">
+            <div class='row'>
+             <div class="col-lg-10">
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <label>Categorised By</label>
+                  <select class='form-control' ng-model='cate_id' ng-change='categories_by()'>
+                    <option value='Hospital'>Hospital</option>
+                  </select>
+                </div>
+              </div>
+              <div class='col-lg-4'>
+                <div class='form-group text-center'>
+                  <label style="margin-right: 60px;">Period</label>
+                  <div class="row">
+                  <div class="col-lg-4">
+                  <select class='form-control'>
+                    <!-- <option value="" disabled selected hidden>Select</option> -->
+                    <option value='April,15'>Apr 15</option>
+                    <option value='MAY,15'>May 15</option>
+                    <option value='June,15'>Jun 15</option>
+                    <option value='July,15'>Jul 15</option>
+                    <option value='August,15'>Aug 15</option>
+                    <option value='September,15'>Sep 15</option>
+                    <option value='october,15'>Oct 15</option>
+                    <option value='November,15'>Nov 15</option>
+                    <option value='December,15'>Dec 15</option>
+                    <option value='january,16'>Jan 16</option>
+                    <option value='February,16'>Feb 16</option>
+                    <option value='March,16'>Mar 16</option>
+                    <option value='April,16'>Apr 16</option>
+                    <option value='May,16'>May 16</option>
+                    <option value='June,16'>Jun 16</option>
+                    <option value='July,16'>Jul 16</option>
+                    <option value='August,16'>Aug 16</option>
+                    <option value='September,16'>Sep 16</option>
+                    <option value='Ocyober,16'>Oct 16</option>
+                    <option value='November,16'>Nov 16</option>
+                    <option value='December,16'>Dec 16</option>
+                    <option value='januarynuary,17'>Jan 17</option>
+                    <option value='February,17'>Feb 17</option>
+                    <option value='March,17'>Mar 17</option>
+                  </select>
+                  </div>
+                  <div class="col-lg-2 text-center" >
+                    <label>To</label>
+                  </div>
+                  <div class="col-lg-4" style="margin-right: 40px;">
+                  <select class='form-control'>
+                    <option value="" disabled selected hidden>Mar 17</option>
+                    <option value='April,15'>Apr 15</option>
+                    <option value='MAY,15'>May 15</option>
+                    <option value='June,15'>Jun 15</option>
+                    <option value='July,15'>Jul 15</option>
+                    <option value='August,15'>Aug 15</option>
+                    <option value='September,15'>Sep 15</option>
+                    <option value='october,15'>Oct 15</option>
+                    <option value='November,15'>Nov 15</option>
+                    <option value='December,15'>Dec 15</option>
+                    <option value='january,16'>Jan 16</option>
+                    <option value='February,16'>Feb 16</option>
+                    <option value='March,16'>Mar 16</option>
+                    <option value='April,16'>Apr 16</option>
+                    <option value='May,16'>May 16</option>
+                    <option value='June,16'>Jun 16</option>
+                    <option value='July,16'>Jul 16</option>
+                    <option value='August,16'>Aug 16</option>
+                    <option value='September,16'>Sep 16</option>
+                    <option value='Ocyober,16'>Oct 16</option>
+                    <option value='November,16'>Nov 16</option>
+                    <option value='December,16'>Dec 16</option>
+                    <option value='januarynuary,17'>Jan 17</option>
+                    <option value='February,17'>Feb 17</option>
+                    <option value='March,17'>Mar 17</option>
+                  </select>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class='col-lg-2' style="margin-right: 150px;">
+                <div class='form-group text-center'>
+                  <label>Frequency</label>
+                  <select class='form-control'>
+                    <option value=''>Monthly</option>
+                    <option value=''>Quarterly</option>
+                    <option value=''>Half-yearly</option>
+                    <option value=''>Annually</option>
+                  </select>
+                </div>
+              </div>
+             </div>
+              <div class='col-lg-2'>
+                <div class='form-group'>
+                  <div class="col-lg-3 text-right">
+                    <button type="button" class="btn btn-primary" style="margin: 30px auto;width: 150px;"><i class="fa fa-download" aria-hidden="true"></i> Download</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="bootstrap-admin-panel-content">
+        <div class='text-center'>
+        <div class="row">
+         <div class="col-md-8">
+          <canvas id="volumeBottom" width="700" height="240" style="margin:0px auto;">
+          </canvas>
+         </div>
+         <div class="col-md-4">
+          <canvas id="volumeTop" width="300" height="220" style="margin:0px auto;">
+          </canvas>
+         </div>
+        </div>
+        </div>
+        <scrollable-table columncount=9 tabledata='cate_volume'>
+          <table class="table table-bordered">
+            <thead >
+              <tr style="background-color: #4bc0c0;">
+               <th fixed style="width:10%; color: white;">Rs. lacs</th>
+               <th style="color: white; text-align: right;">Apr-15</th>
+               <th style="color: white; text-align: right;">May-15</th>
+               <th style="color: white; text-align: right;">Jun-15</th>
+               <th style="color: white; text-align: right;">Jul-15</th>
+               <th style="color: white; text-align: right;">Aug-15</th>
+               <th style="color: white; text-align: right;">Sept-15</th>
+               <th style="color: white; text-align: right;">Oct-15</th>
+               <th style="color: white; text-align: right;">Nov-15</th>
+               <th style="color: white; text-align: right;">Dec-15</th>
+               <th style="color: white; text-align: right;">Jan-16</th>
+               <th style="color: white; text-align: right;">Feb-16</th>
+               <th style="color: white; text-align: right;">Mar-16</th>
+               <th style="color: white; text-align: right;">Apr-16</th>
+               <th style="color: white; text-align: right;">May-16</th>
+               <th style="color: white; text-align: right;">Jun-16</th>
+               <th style="color: white; text-align: right;">Jul-16</th>
+               <th style="color: white; text-align: right;">Aug-16</th>
+               <th style="color: white; text-align: right;">Sep-16</th>
+               <th style="color: white; text-align: right;">Oct-16</th>
+               <th style="color: white; text-align: right;">Nov-16</th>
+               <th style="color: white; text-align: right;">Dec-16</th>
+               <th style="color: white; text-align: right;">Jan-17</th>
+               <th style="color: white; text-align: right;">Feb-17</th>
+               <th style="color: white; text-align: right;">Mar-17</th>
+               <th style="color: white; text-align: right;">Total</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat='(k,items) in cate_volume'>
+              <tr ng-repeat='values1 in items' index='{{ index}}' ng-click='expand(k)' consolidated ng-show='!values1.is_regular'>
+                <th fixed style="background-color: #F5F5DC;">{{ values1.name }}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Apr_15 | currency:"":0}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.May_15 | currency:"":0}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jun_15 | currency:"":0}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jul_15 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_15 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_15 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_15 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_15 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_15 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Feb_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Apr_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.May_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jun_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jul_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_16 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_17 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;" >{{values1.Feb_17 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_17 | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1 | rowtotal | currency:"":0}}</th>
+              </tr>
+              <tr ng-repeat='values1 in items' index='{{ index}}'  ng-show='values1.is_regular && expanded[k]'>
+                <td fixed>{{values1.Hospital}}</td>
+                <td style="text-align: right;">{{values1.Apr_15}}</td>
+                <td style="text-align: right;">{{values1.May_15}}</td>
+                <td style="text-align: right;">{{values1.Jun_15}}</td>
+                <td style="text-align: right;">{{values1.Jul_15}}</td>
+                <td style="text-align: right;">{{values1.Aug_15}}</td>
+                <td style="text-align: right;" ng-class='values1.Sep_15_exp'>{{values1.Sep_15}}</td>
+                <td style="text-align: right;" ng-class='values1.Oct_15_exp'>{{values1.Oct_15}}</td>
+                <td style="text-align: right;">{{values1.Nov_15}}</td>
+                <td style="text-align: right;">{{values1.Dec_15}}</td>
+                <td style="text-align: right;">{{values1.Jan_16}}</td>
+                <td style="text-align: right;">{{values1.Feb_16}}</td>
+                <td style="text-align: right;" >{{values1.Mar_16}}</td>
+                <td style="text-align: right;">{{values1.Apr_16}}</td>
+                <td style="text-align: right;">{{values1.May_16}}</td>
+                <td style="text-align: right;" ng-class='values1.Jun_16_exp'>{{values1.Jun_16}}</td>
+                <td style="text-align: right;">{{values1.Jul_16}}</td>
+                <td style="text-align: right;">{{values1.Aug_16}}</td>
+                <td style="text-align: right;" ng-class='values1.Sep_16_exp'>{{values1.Sep_16}}</td>
+                <td style="text-align: right;">{{values1.Oct_16}}</td>
+                <td style="text-align: right;">{{values1.Nov_16}}</td>
+                <td style="text-align: right;">{{values1.Dec_16}}</td>
+                <td style="text-align: right;">{{values1.Jan_17}}</td>
+                <td style="text-align: right;">{{values1.Feb_17}}</td>
+                <td style="text-align: right;">{{values1.Mar_17}}</td>
+                <td style="text-align: right;font-weight: bold;">{{values1 | rowtotal | currency:"":0 }}</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th fixed style="background-color: #F5F5DC;">Total</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{ cate_volume | total_count:"Apr_15" | currency:"":0}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_volume | total_count:"May_15" | currency:"":0}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_volume | total_count:"Jun_15" | currency:"":0}}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{cate_volume | total_count:"Jul_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Aug_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Sep_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Oct_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Nov_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Dec_15" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Jan_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Feb_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Mar_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Apr_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"May_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Jun_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Jul_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Aug_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Sep_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Oct_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Nov_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Dec_16" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Jan_17" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;" >{{cate_volume | total_count:"Feb_17" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{cate_volume | total_count:"Mar_17" | currency:"":0}}</th>
+                <th style="text-align: right;background-color: #F5F5DC;">-</th>
+              </tr>
+            </tbody>
+          </table>
+        <!-- </scrollable-table> -->
+
+        <br/>
+        <br/>
+
+        <table class="table table-bordered">
+ <tr style="background-color: #4bc0c0;">
+  <td height=16 class=xl6531775 width=98 style='height:12.0pt;width:74pt; color: white; font-style: bolder' fixed>Days</td>
+  <td style="color: white; text-align: right;">Apr-15</td>
+  <td style="color: white; text-align: right;">May-15</td>
+  <td style="color: white; text-align: right;">Jun-15</td>
+  <td style="color: white; text-align: right;">Jul-15</td>
+  <td style="color: white; text-align: right;">Aug-15</td>
+  <td style="color: white; text-align: right;">Sep-15</td>
+  <td style="color: white; text-align: right;">Oct-15</td>
+  <td style="color: white; text-align: right;">Nov-15</td>
+  <td style="color: white; text-align: right;">Dec-15</td>
+  <td style="color: white; text-align: right;">Jan-16</td>
+  <td style="color: white; text-align: right;">Feb-16</td>
+  <td style="color: white; text-align: right;">Mar-16</td>
+  <td style="color: white; text-align: right;">FY16</td>
+  <td style="color: white; text-align: right;">Apr-16</td>
+  <td style="color: white; text-align: right;">May-16</td>
+  <td style="color: white; text-align: right;">Jun-16</td>
+  <td style="color: white; text-align: right;">Jul-16</td>
+  <td style="color: white; text-align: right;">Aug-16</td>
+  <td style="color: white; text-align: right;">Sep-16</td>
+  <td style="color: white; text-align: right;">Oct-16</td>
+  <td style="color: white; text-align: right;">Nov-16</td>
+  <td style="color: white; text-align: right;">Dec-16</td>
+  <td style="color: white; text-align: right;">Jan-17</td>
+  <td style="color: white; text-align: right;">Feb-17</td>
+  <td style="color: white; text-align: right;">Mar-17</td>
+  <td style="color: white; text-align: right;">FY17</td>
+ </tr>
+ <tr height=15 style='height:11.25pt'>
+  <td height=15 class=xl6818014 style='height:11.25pt;background-color: #F5F5DC; font-style: bold' fixed>Hospital 1</td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                     
+  </span>92 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>94
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>96
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>93
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>94
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>92
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>93
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>97
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>95
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>93
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>92
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>95
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>95
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>92
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>94
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>99
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>               </span>100 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>99
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>               </span>105 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>               </span>120 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>               </span>120 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>               </span>100 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>               </span>120 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>               </span>125 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>               </span>125 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>               </span>120 </td>
+ </tr>
+ <tr height=15 style='height:11.25pt'>
+  <td height=15 class=xl6818014 style='height:11.25pt;background-color: #F5F5DC; font-style: bold' fixed>Hospital 2</td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                     
+  </span>69 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>71
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>72
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>70
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>71
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>45
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>70
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>73
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>71
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>70
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>69
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>71
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>71
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>69
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>71
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>75
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>70
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>68
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>73
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>66
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>75
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>72
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>73
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>74
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>76
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>76
+  </td>
+ </tr>
+ <tr height=15 style='height:11.25pt'>
+  <td height=15 class=xl6818014 style='height:11.25pt;background-color: #F5F5DC; font-style: bold' fixed>Hospital 3</td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                     
+  </span>64 </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>65
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>67
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>65
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>65
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>64
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>65
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>68
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>66
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>65
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>64
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>66
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>66
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>64
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>65
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>69
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>65
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>63
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>68
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>61
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>70
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>67
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>68
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>68
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>71
+  </td>
+  <td style="text-align: right;background-color: #F5F5DC;"><span style='mso-spacerun:yes'>                 </span>71
+  </td>
+ </tr>
+ <tr height=0 style='display:none'>
+  <td width=98 style='width:74pt'></td>
+  <td width=86 style='width:65pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+  <td width=71 style='width:53pt'></td>
+ </tr>
+</table>
+
+<br/>
+<br/>
+        <!-- <scrollable-table columncount=9 tabledata='cate_volume'> -->
+          <table class="table table-bordered">
+            <thead >
+              <tr style="background-color: #4bc0c0;">
+               <th fixed style="width:10%; color: white;">% Change</th>
+               <th style="color: white; text-align: right;">Apr-15</th>
+               <th style="color: white; text-align: right;">May-15</th>
+               <th style="color: white; text-align: right;">Jun-15</th>
+               <th style="color: white; text-align: right;">Jul-15</th>
+               <th style="color: white; text-align: right;">Aug-15</th>
+               <th style="color: white; text-align: right;">Sep-15</th>
+               <th style="color: white; text-align: right;">Oct-15</th>
+               <th style="color: white; text-align: right;">Nov-15</th>
+               <th style="color: white; text-align: right;">Dec-15</th>
+               <th style="color: white; text-align: right;">Jan-16</th>
+               <th style="color: white; text-align: right;">Feb-16</th>
+               <th style="color: white; text-align: right;">Mar-16</th>
+               <th style="color: white; text-align: right;">Apr-16</th>
+               <th style="color: white; text-align: right;">May-16</th>
+               <th style="color: white; text-align: right;">Jun-16</th>
+               <th style="color: white; text-align: right;">Jul-16</th>
+               <th style="color: white; text-align: right;">Aug-16</th>
+               <th style="color: white; text-align: right;">Sep-16</th>
+               <th style="color: white; text-align: right;">Oct-16</th>
+               <th style="color: white; text-align: right;">Nov-16</th>
+               <th style="color: white; text-align: right;">Dec-16</th>
+               <th style="color: white; text-align: right;">Jan-17</th>
+               <th style="color: white; text-align: right;">Feb-17</th>
+               <th style="color: white; text-align: right;">Mar-17</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat='(k,items) in cate_volume'>
+              <tr ng-repeat='values1 in items' index='{{ index}}' ng-click='expand_2(k)' consolidated ng-show='!values1.is_regular'>
+                <th fixed style="background-color: #F5F5DC;">{{ values1.name }}</th>
+                <th style="text-align: right; background-color: #F5F5DC;">-</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.May_15_g | currency:"":0}}%</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jun_15_g | currency:"":0}}%</th>
+                <th style="text-align: right; background-color: #F5F5DC;">{{values1.Jul_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_15_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Feb_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Apr_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.May_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jun_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jul_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Aug_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Sep_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Oct_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Nov_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Dec_16_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Jan_17_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;" >{{values1.Feb_17_g | currency:"":0}}%</th>
+                <th style="text-align: right;background-color: #F5F5DC;">{{values1.Mar_17_g | currency:"":0}}%</th>
+              </tr>
+              <tr ng-repeat='values1 in items' index='{{ index}}'  ng-show='values1.is_regular && expanded_2[k]'>
+                <td fixed>{{values1.Hospital}}</td>
+                <td style="text-align: right;">-</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.May_15_g)'>{{values1.May_15_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jun_15_g)'>{{values1.Jun_15_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jul_15_g)'>{{values1.Jul_15_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Aug_15_g)'>{{values1.Aug_15_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Sep_15_g)'>{{values1.Sep_15_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Oct_15_g)'>{{values1.Oct_15_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Nov_15_g)'>{{values1.Nov_15_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Dec_15_g)'>{{values1.Dec_15_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jan_16_g)'>{{values1.Jan_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Feb_16_g)'>{{values1.Feb_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Mar_16_g)'>{{values1.Mar_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Apr_16_g)'>{{values1.Apr_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.May_16_g)'>{{values1.May_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jun_16_g)'>{{values1.Jun_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jul_16_g)'>{{values1.Jul_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Aug_16_g)'>{{values1.Aug_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Sep_16_g)'>{{values1.Sep_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Oct_16_g)'>{{values1.Oct_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Nov_16_g)'>{{values1.Nov_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Dec_16_g)'>{{values1.Dec_16_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Jan_17_g)'>{{values1.Jan_17_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Feb_17_g)'>{{values1.Feb_17_g }}%</td>
+                <td style="text-align: right;" ng-class='getGrowthClass(values1.Mar_17_g)'>{{values1.Mar_17_g }}%</td>
+              </tr>
+            </tbody>
+          </table>
+        </scrollable-table>
+      </div>
+</div>

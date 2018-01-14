@@ -1,0 +1,86 @@
+<div class="panel-heading">
+          <div class="text-muted bootstrap-admin-box-title">Bed occupancy for hospital -3 for July 2015 and March 2017 was significantly higher at 62% and 70% respectively</div>
+      </div>
+      <div class="bootstrap-admin-panel-content">
+        <scrollable-table columncount=15 tabledata='observation2'>
+          <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th fixed style="width:10%">Particulars</th>
+                    <th >Apr-15</th>
+                    <th>May-15</th>
+                    <th>Jun-15</th>
+                    <th>Jul-15</th>
+                    <th>Aug-15</th>
+                    <th>Sept-15</th>
+                    <th>Oct-15</th>
+                    <th>Nov-15</th>
+                    <th>Dec-15</th>
+                    <th>Jan-16</th>
+                    <th>Feb-16</th>
+                    <th>Mar-16</th>
+                    <th>FY-16</th>
+                    <th>Apr-16</th>
+                    <th>May-16</th>
+                    <th>Jun-16</th>
+                    <th>Jul-16</th>
+                    <th>Aug-16</th>
+                    <th>Sep-16</th>
+                    <th>Oct-16</th>
+                    <th>Nov-16</th>
+                    <th>Dec-16</th>
+                    <th>Jan-17</th>
+                    <th>Feb-17</th>
+                    <th>Mar-17</th>
+                    <th>FY-17</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat='values in observation2'>
+                    <td fixed>{{values.Particulars}}</td>
+                    <td >{{values.Apr_15}}</td>
+                    <td >{{values.May_15}}</td>
+                    <td >{{values.Jun_15}}</td>
+                    <td >{{values.Jul_15}}</td>
+                    <td >{{values.Aug_15}}</td>
+                    <td >{{values.Sep_15}}</td>
+                    <td >{{values.Oct_15}}</td>
+                    <td >{{values.Nov_15}}</td>
+                    <td >{{values.Dec_15}}</td>
+                    <td >{{values.Jan_16}}</td>
+                    <td >{{values.Feb_16}}</td>
+                    <td >{{values.Mar_16}}</td>
+                    <td >{{values.FY16}}</td>
+                    <td >{{values.Apr_16}}</td>
+                    <td >{{values.May_16}}</td>
+                    <td >{{values.Jun_16}}</td>
+                    <td >{{values.Jul_16}}</td>
+                    <td >{{values.Aug_16}}</td>
+                    <td >{{values.Sep_16}}</td>
+                    <td >{{values.Oct_16}}</td>
+                    <td >{{values.Nov_16}}</td>
+                    <td >{{values.Dec_16}}</td>
+                    <td >{{values.Jan_17}}</td>
+                    <td >{{values.Feb_17}}</td>
+                    <td >{{values.Mar_17}}</td>
+                    <td >{{values.FY17}}</td>
+                  </tr>
+                  <tr ng-show='!is_prog && is_more'>
+                    <td colspan="5" class='text-center'>
+                      <a ng-click='view_more()'>View More</a>
+                    </td>
+                  </tr>
+                  <tr ng-show='!is_prog && organizations.length == 0'>
+                    <td colspan="5" class='text-center'>
+                      No Data
+                    </td>
+                  </tr>
+                  <tr ng-show='is_prog'>
+                    <td colspan="5" class='text-center'>
+                      <i class='fa fa-spin fa-refresh'></i> Loading..
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </scrollable-table>
+      </div>

@@ -1,0 +1,185 @@
+<style type="text/css">
+  body{
+    background: url(../assets/img/profile.jpg);
+    background-size: cover;
+  }
+</style>
+  <div class="container-fluid">
+    <div class="row">
+        <!-- content -->
+        <div class="col-md-12">
+            <div class="row page-header">
+              <div class="col-lg-8">
+                  <div >
+                      <h3 style="margin-top:10px;">Profile</h3>
+                  </div>
+              </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <!-- <div class="panel panel-default panel-transparent"> -->
+                        <div class="bootstrap-admin-panel-content">
+                          <div class='text-right'>
+                          <button type='button' class='btn btn-default' data-toggle='modal' data-target='#addFilters'>
+                                  <i class='fa fa-plus'></i> Add hospital
+                                  </button>
+                            <input type='text' placeholder="Search Hospital" class='form-control' style="width:200px;display:inline-block;margin-bottom:10px;" />
+                            <button class='btn btn-primary'>Search</button>
+                          </div>
+                          <div class='form-group'>
+                          <table class="table table-bordered container-fluid" style="width: 900px; background-color: white">
+                            <thead> 
+                              <tr>
+                                <th>Hospital Name</th>
+                                <th>Location</th>
+                                <th style="width: 15%; text-align: center;">ICU beds</th>
+                                <th style="width: 15%; text-align: center;">Special ward beds</th>
+                                <th style="width: 15%; text-align: center;">General ward beds</th>
+                                <th style="text-align: center;">Start date</th>
+                                <th style="text-align: center;">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Hospital 1</td>
+                                <td>Chennai</td>
+                                <td style="text-align: center;">200<i class="fa fa-plus-circle" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></i></td>
+
+                                <td style="text-align: center;">200<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></td>
+                                <td style="text-align: center;">200<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></button></td>
+                                <td style="text-align: center;">11-3-2017</td>
+                                <td style='text-align:center;width:15%'>
+                                    <div class='btn-group'  data-toggle='modal' data-target='#addFilters'>
+                                      <a  class="btn btn-default"><i class="fa fa-file-text-o"></i> Edit</a>
+                                    </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Hospital 2</td>
+                                <td>Bangalore</td>
+                                <td style="text-align: center;">250<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></td>
+                                <td style="text-align: center;">250<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></td>
+                                <td style="text-align: center;">250<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></td>
+                                <td style="text-align: center;">11-3-2017</td>
+                                <td style='text-align:center;width:15%'>
+                                    <div class='btn-group'>
+                                      <a  class="btn btn-default"><i class="fa fa-file-text-o"></i> Edit</a>
+                                    </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Hospital 3</td>
+                                <td>New Delhi</td>
+                                <td style="text-align: center;">400<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></td>
+                                <td style="text-align: center;">400<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></td>
+                                <td style="text-align: center;">400<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></td>
+                                <td style="text-align: center;">11-3-2017</td>
+                                <td style='text-align:center;width:15%'>
+                                    <div class='btn-group'>
+                                      <a  class="btn btn-default"><i class="fa fa-file-text-o"></i> Edit</a>
+                                    </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Hospital 4</td>
+                                <td>Mumbai</td>
+                                <td style="text-align: center;">350<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></td>
+                                <td style="text-align: center;">350<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></td>
+                                <td style="text-align: center;">350<i class="fa fa-plus-circle fa-2" style="float: right; font-size: 16px;" data-toggle='modal' data-target='#addBeds' aria-hidden="true"></td>
+                                <td style="text-align: center;">11-3-2017</td>
+                                <td style='text-align:center;width:15%'>
+                                    <div class='btn-group'>
+                                      <a  class="btn btn-default"><i class="fa fa-file-text-o"></i> Edit</a>
+                                    </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="modal fade" id="addFilters" role="dialog">
+      <div class="modal-dialog" style="width: 500px;">
+      <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Add Hospital</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                <div class='col-lg-7'>
+                  <div class="form-group">
+                    <label for="acronym">Hospital Name</label>
+                    <input type="text" class="form-control" placeholder="Hospital Name" />
+                  </div>
+                </div>
+                <div class='col-lg-7'>
+                  <div class="form-group">
+                    <label for="acronym">Location</label>
+                    <input type="text" class="form-control" placeholder="Location" />
+                  </div>
+                </div>
+                <div class='col-lg-7'>
+                  <div class="form-group">
+                    <label for="acronym">No of Beds</label>
+                    <input type="text" class="form-control" placeholder="No of Beds" n />
+                  </div>
+                </div>
+                <div class='col-lg-7'>
+                  <div class="form-group">
+                    <label for="acronym">Start Date</label>
+                    <input type="date" class="form-control" placeholder="Start Date" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-primary">
+                <i class='fa fa-spin fa-refresh'></i>
+              </button>
+            </div>
+        </div>
+      </div>      
+    </div>
+
+    <div class="modal fade" id="addBeds" role="dialog">
+      <div class="modal-dialog" style="width: 500px;">
+      <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Add ICU Beds(Hospital Name)</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                <div class='col-lg-7'>
+                  <div class="form-group">
+                    <label for="acronym">Date</label>
+                    <input type="date" class="form-control" placeholder="Start Date" />
+                  </div>
+                </div>
+                <div class='col-lg-7'>
+                  <div class="form-group">
+                    <label for="acronym">No of additional Beds</label>
+                    <input type="text" class="form-control" placeholder="No of Beds" n />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-primary">
+                <i class='fa fa-spin fa-refresh'></i>
+              </button>
+            </div>
+        </div>
+      </div>      
+    </div>
+  </div>

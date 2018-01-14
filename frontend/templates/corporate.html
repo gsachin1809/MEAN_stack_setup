@@ -1,0 +1,203 @@
+<div   class="panel panel-default">
+      <div class="panel-heading">
+          <div class="text-muted bootstrap-admin-box-title">Other corporate cost</div>
+      </div>
+      <div class="bootstrap-admin-panel-content">
+        <scrollable-table columncount=15 tabledata='corporate1'>
+          <table class="table table-bordered">
+        		<thead>
+        		  <tr style="background-color: #4bc0c0;">
+        		    <th fixed style="width:15%;">Rs. in Lacs</th>
+        		    <th style="text-align: right;">Apr-15</th>
+        		    <th style="text-align: right;">May-15</th>
+        		    <th style="text-align: right;">Jun-15</th>
+        		    <th style="text-align: right;">Jul-15</th>
+        		    <th style="text-align: right;">Aug-15</th>
+        		    <th style="text-align: right;">Sep-15</th>
+        		    <th style="text-align: right;">Oct-15</th>
+        		    <th style="text-align: right;">Nov-15</th>
+        		    <th style="text-align: right;">Dec-15</th>
+        		    <th style="text-align: right;">Jan-16</th>
+        		    <th style="text-align: right;">Feb-16</th>
+        		    <th style="text-align: right;">Mar-16</th>
+                    <th style="text-align: right;">FY-16</th>
+                    <th style="text-align: right;">Apr-16</th>
+        		    <th style="text-align: right;">May-16</th>
+        		    <th style="text-align: right;">Jun-16</th>
+        		    <th style="text-align: right;">Jul-16</th>
+        		    <th style="text-align: right;">Aug-16</th>
+        		    <th style="text-align: right;">Sep-16</th>
+        		    <th style="text-align: right;">Oct-16</th>
+        		    <th style="text-align: right;">Nov-16</th>
+        		    <th style="text-align: right;">Dec-16</th>
+        		    <th style="text-align: right;">Jan-17</th>
+        		    <th style="text-align: right;">Feb-17</th>
+                    <th style="text-align: right;">Mar-17</th>
+        		    <th style="text-align: right;">FY-17</th>
+        		  </tr>
+        		</thead>
+        		<tbody>
+        		  <tr ng-repeat='values in corporate1'>
+        		  	<td style="background-color: #F5F5DC;" fixed>{{values.Rs_in_lacs}}</td>
+        		  	<td style="text-align: right;">{{values.Apr_15 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.May_15 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Jun_15 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Jul_15 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Aug_15 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Sep_15 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Oct_15 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Nov_15 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Dec_15 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Jan_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Feb_16 | currency:"":1}}</td>
+                    <td style="text-align: right;">{{values.Mar_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.FY16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Apr_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.May_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Jun_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Jul_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Aug_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Sep_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Oct_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Nov_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Dec_16 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Jan_17 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.Feb_17 | currency:"":1}}</td>
+                    <td style="text-align: right;">{{values.Mar_17 | currency:"":1}}</td>
+        		  	<td style="text-align: right;">{{values.FY17 | currency:"":1}}</td>
+        		  </tr>
+        		  <tr ng-show='!is_prog && is_more'>
+        		    <td colspan="5" class='text-center'>
+        		      <a ng-click='view_more()'>View More</a>
+        		    </td>
+        		  </tr>
+        		  <tr ng-show='!is_prog && organizations.length == 0'>
+        		    <td colspan="5" class='text-center'>
+        		      No Data
+        		    </td>
+        		  </tr>
+        		  <tr ng-show='is_prog'>
+        		    <td colspan="5" class='text-center'>
+        		      <i class='fa fa-spin fa-refresh'></i> Loading..
+        		    </td>
+        		  </tr>
+        		</tbody>
+                <tbody>
+              <tr>
+                <th fixed style="background-color: #F5F5DC;">Total</th>
+                <th style="text-align: right; background-color: #F5F5DC;">21.7</th>
+                <th style="text-align: right; background-color: #F5F5DC;">8.5</th>
+                <th style="text-align: right; background-color: #F5F5DC;">9.2</th>
+                <th style="text-align: right; background-color: #F5F5DC;">20.3</th>
+                <th style="text-align: right;background-color: #F5F5DC;">8.4</th>
+                <th style="text-align: right;background-color: #F5F5DC;">29.6<th style="text-align: right;background-color: #F5F5DC;">16.2</th>
+                <th style="text-align: right;background-color: #F5F5DC;">16.5</th>
+                <th style="text-align: right;background-color: #F5F5DC;">10.1</th>
+                <th style="text-align: right;background-color: #F5F5DC;">21.4</th>
+                <th style="text-align: right;background-color: #F5F5DC;">13.2</th>
+                <th style="text-align: right;background-color: #F5F5DC;">26.7</th>
+                <th style="text-align: right;background-color: #F5F5DC;">201.7</th>
+                <th style="text-align: right;background-color: #F5F5DC;">25.4</th>
+                <th style="text-align: right;background-color: #F5F5DC;">9.9</th>
+                <th style="text-align: right;background-color: #F5F5DC;">6.6</th>
+                <th style="text-align: right;background-color: #F5F5DC;">25.8</th>
+                <th style="text-align: right;background-color: #F5F5DC;">8.7</th>
+                <th style="text-align: right;background-color: #F5F5DC;">16.6</th>
+                <th style="text-align: right;background-color: #F5F5DC;">17.6</th>
+                <th style="text-align: right;background-color: #F5F5DC;">24.5</th>
+                <th style="text-align: right;background-color: #F5F5DC;">8.8</th>
+                <th style="text-align: right;background-color: #F5F5DC;">25.7</th>
+                <th style="text-align: right;background-color: #F5F5DC;" >14.4</th>
+                <th style="text-align: right;background-color: #F5F5DC;">28.3</th>
+                <th style="text-align: right;background-color: #F5F5DC;">212.4</th>
+              </tr>
+            </tbody>
+        	</table>
+        </scrollable-table>
+      </div>
+</div>
+
+<div   class="panel panel-default">
+      <div class="panel-heading">
+          <div class="text-muted bootstrap-admin-box-title">Growth %</div>
+      </div> 
+      <div class="bootstrap-admin-panel-content">
+        <scrollable-table columncount=15 tabledata='corporate2'>
+          <table class="table table-bordered">
+        		<thead>
+        		  <tr>
+        		    <th fixed style="width:15%">Growth %</th>
+        		    <th style="text-align: right;">Apr-15</th>
+        		    <th style="text-align: right;">May-15</th>
+        		    <th style="text-align: right;">Jun-15</th>
+        		    <th style="text-align: right;">Jul-15</th>
+        		    <th style="text-align: right;">Aug-15</th>
+        		    <th style="text-align: right;">Sep-15</th>
+        		    <th style="text-align: right;">Oct-15</th>
+        		    <th style="text-align: right;">Nov-15</th>
+        		    <th style="text-align: right;">Dec-15</th>
+        		    <th style="text-align: right;">Jan-16</th>
+        		    <th style="text-align: right;">Feb-16</th>
+        		    <th style="text-align: right;">Mar-16</th>
+        		    <th style="text-align: right;">Apr-16</th>
+        		    <th style="text-align: right;">May-16</th>
+        		    <th style="text-align: right;">Jun-16</th>
+        		    <th style="text-align: right;">Jul-16</th>
+        		    <th style="text-align: right;">Aug-16</th>
+        		    <th style="text-align: right;">Sep-16</th>
+        		    <th style="text-align: right;">Oct-16</th>
+        		    <th style="text-align: right;">Nov-16</th>
+        		    <th style="text-align: right;">Dec-16</th>
+        		    <th style="text-align: right;">Jan-17</th>
+        		    <th style="text-align: right;">Feb-17</th>
+        		    <th style="text-align: right;">Mar-17</th>
+        		  </tr>
+        		</thead>
+        		<tbody>
+        		  <tr ng-repeat='values in corporate2'>
+        		  	<td style="background-color: #F5F5DC;" fixed>{{values.Growth}}</td>
+        		  	<td style="text-align: right;">{{values.Apr_15}}</td>
+        		  	<td style="text-align: right;">{{values.May_15}}</td>
+        		  	<td style="text-align: right;">{{values.Jun_15}}</td>
+        		  	<td style="text-align: right;">{{values.Jul_15}}</td>
+        		  	<td style="text-align: right;">{{values.Aug_15}}</td>
+        		  	<td style="text-align: right;">{{values.Sep_15}}</td>
+        		  	<td style="text-align: right;">{{values.Oct_15}}</td>
+        		  	<td style="text-align: right;">{{values.Nov_15}}</td>
+        		  	<td style="text-align: right;">{{values.Dec_15}}</td>
+        		  	<td style="text-align: right;">{{values.Jan_16}}</td>
+        		  	<td style="text-align: right;">{{values.Feb_16}}</td>
+        		  	<td style="text-align: right;">{{values.Mar_16}}</td>
+        		  	<td style="text-align: right;">{{values.Apr_16}}</td>
+        		  	<td style="text-align: right;">{{values.May_16}}</td>
+        		  	<td style="text-align: right;">{{values.Jun_16}}</td>
+        		  	<td style="text-align: right;">{{values.Jul_16}}</td>
+        		  	<td style="text-align: right;">{{values.Aug_16}}</td>
+        		  	<td style="text-align: right;">{{values.Sep_16}}</td>
+        		  	<td style="text-align: right;">{{values.Oct_16}}</td>
+        		  	<td style="text-align: right;">{{values.Nov_16}}</td>
+        		  	<td style="text-align: right;">{{values.Dec_16}}</td>
+        		  	<td style="text-align: right;">{{values.Jan_17}}</td>
+        		  	<td style="text-align: right;">{{values.Feb_17}}</td>
+        		  	<td style="text-align: right;">{{values.Mar_17}}</td>
+        		  </tr>
+        		  <tr ng-show='!is_prog && is_more'>
+        		    <td colspan="5" class='text-center'>
+        		      <a ng-click='view_more()'>View More</a>
+        		    </td>
+        		  </tr>
+        		  <tr ng-show='!is_prog && organizations.length == 0'>
+        		    <td colspan="5" class='text-center'>
+        		      No Data
+        		    </td>
+        		  </tr>
+        		  <tr ng-show='is_prog'>
+        		    <td colspan="5" class='text-center'>
+        		      <i class='fa fa-spin fa-refresh'></i> Loading..
+        		    </td>
+        		  </tr>
+        		</tbody>
+        	</table>
+        </scrollable-table>
+      </div>
+</div>

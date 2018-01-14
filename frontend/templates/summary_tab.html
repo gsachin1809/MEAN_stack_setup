@@ -1,0 +1,48 @@
+<div ng-controller="OpTabController">
+
+  <ul class="nav nav-pills nav-fill container-fluid" style="background-color: #e6e6e6">
+      <li style="width: 300px; margin-left: 50px;" id="tab1" ng-click='$state.go("app.pred.summaries.summary_revenue")' class="nav-item text-center">
+        <a class="nav-link" style="font-size: small;"><b>Revenue</b></a>
+      </li>
+      <li style="width: 300px;" id="tab2" ng-click='$state.go("app.pred.capital.dso")' class="nav-item text-center">
+        <a class="nav-link" style="font-size: small;"><b>DSO</b></a>
+      </li>
+      <li style="width: 300px;" id="tab3" ng-click='$state.go("app.pred.capital.dpo")' class="nav-item text-center">
+        <a class="nav-link" style="font-size: small;"><b>DPO</b></a>
+      </li>
+      <li style="width: 300px;" id="tab4" ng-click='$state.go("app.pred.capital.inventory")' class="nav-item text-center">
+        <a class="nav-link" style="font-size: small;"><b>Inventory Days</b></a>
+      </li>
+  </ul>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+$("#tab1").addClass('active');
+  $('#tab2').on('click',function(){
+    $('#tab1').removeClass('active');
+    $('#tab4').removeClass('active');
+    $('#tab3').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('#tab3').on('click',function(){
+    $('#tab1').removeClass('active');
+    $('#tab4').removeClass('active');
+    $('#tab2').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('#tab1').on('click',function(){
+    $('#tab2').removeClass('active');
+    $('#tab4').removeClass('active');
+    $('#tab3').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('#tab4').on('click',function(){
+    $('#tab2').removeClass('active');
+    $('#tab1').removeClass('active');
+    $('#tab3').removeClass('active');
+    $(this).addClass('active');
+  });
+});
+</script>
